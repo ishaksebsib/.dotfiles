@@ -12,3 +12,4 @@ qtile/
 !LICENSE
 !README.md
 !qtile/
+!qtile/**
