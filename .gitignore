@@ -1,0 +1,14 @@
+# Include specific files
+LICENSE
+README.md
+.gitignore
+
+# Include the "qtile" folder
+qtile/
+
+# Exclude everything else
+*
+!.gitignore
+!LICENSE
+!README.md
+!qtile/
