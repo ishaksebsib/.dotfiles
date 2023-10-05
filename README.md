@@ -5,15 +5,15 @@
 ### Description:
 This repository contains my personal configuration files and scripts for the Qtile window manager. Qtile is a highly configurable and extensible tiling window manager written and configured in Python. Feel free to explore my setup, use it as a reference, or fork it for your own customizations.
 
+## Screenshots
+
+![image](https://github.com/ishaksebsib/.dotfiles/assets/121272992/92e654f1-a25f-45a8-adca-15f91c0ca0dd)
+
 ### README.md:
 ```markdown
 # Qtile Window Manager Configuration
 
 This repository contains my personal configuration files and scripts for the Qtile window manager. Qtile is a highly configurable and extensible tiling window manager written and configured in Python. In this repository, you'll find my setup, which includes keybindings, widgets, and layout configurations, as well as some additional custom scripts.
-
-## Screenshots
-
-![image](https://github.com/ishaksebsib/.dotfiles/assets/121272992/92e654f1-a25f-45a8-adca-15f91c0ca0dd)
 
 
 ## Getting Started
@@ -26,7 +26,9 @@ To use this configuration on your system, follow these steps:
 git clone https://github.com/ishaksebsib/.dotfiles.git ~/.config/qtile
 ```
 
-2. Make sure you have the required dependencies installed.
+
+
+## Make sure you have the required dependencies installed.
 
   You can use the following one-liner command to install the dependencies mentioned in your README.md on an Arch-based system:
 
