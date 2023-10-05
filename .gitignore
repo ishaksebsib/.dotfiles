@@ -1,15 +1,9 @@
-# Include specific files
-LICENSE
-README.md
-.gitignore
-
-# Include the "qtile" folder
-qtile/
-
-# Exclude everything else
+# Exclude everything else except main config files
 *
 !.gitignore
 !LICENSE
 !README.md
 !qtile/
 !qtile/**
+!kitty/
+!kitty/**
