@@ -86,6 +86,10 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill/close focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([win], "w", lazy.spawn('google-chrome-stable'),desc='launch google chrome'),
+    Key([win], "c", lazy.spawn('code'), desc="launch vscode"),
+    Key([win], "t", lazy.spawn('telegram-desktop'), desc="Open File Managere"),
+
 
     ## LAUNCHER 
     Key([mod], "r", lazy.spawn('rofi -show drun'), desc="Launch app Launcher"),
@@ -100,10 +104,10 @@ keys = [
     # CONTROAL BRIGHTNESS
 
      # Increase brightness
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s +3%")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s +1%")),
 
     # Decrease brightness
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 3%-")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 1%-")),
 
     # CONTROAL AUDIO 
 

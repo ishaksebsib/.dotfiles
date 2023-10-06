@@ -10,10 +10,10 @@ xinput set-prop 14 'libinput Natural Scrolling Enabled' 1
 xinput set-prop 14  "libinput Tapping Enabled" 1 
 
 # change the wall papaer
-feh --bg-fill ./Wallpaper/background.jpg 
+# feh --bg-fill ./Wallpaper/background.jpg 
 
 #change the theme to dark mood 
-darkman set dark 
+# darkman set dark 
 
 # Start picom
 picom --config ~/.config/picom/picom.conf &
