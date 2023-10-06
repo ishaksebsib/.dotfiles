@@ -9,12 +9,6 @@ This repository contains my personal configuration files and scripts for the Qti
 
 ![image](https://github.com/ishaksebsib/.dotfiles/assets/121272992/92e654f1-a25f-45a8-adca-15f91c0ca0dd)
 
-### README.md:
-```markdown
-# Qtile Window Manager Configuration
-
-This repository contains my personal configuration files and scripts for the Qtile window manager. Qtile is a highly configurable and extensible tiling window manager written and configured in Python. In this repository, you'll find my setup, which includes keybindings, widgets, and layout configurations, as well as some additional custom scripts.
-
 
 ## Getting Started
 
