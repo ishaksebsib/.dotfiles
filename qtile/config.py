@@ -104,7 +104,7 @@ keys = [
     # CONTROAL BRIGHTNESS
 
      # Increase brightness
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s +1%")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s +4%")),
 
     # Decrease brightness
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 1%-")),
