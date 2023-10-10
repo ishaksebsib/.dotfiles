@@ -116,7 +116,12 @@ keys = [
 
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),#Decrease volume
 
+    
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),# Toggle Mute
+    
+    
+   # Key([win], "m", lazy.spawn("togglemon"), desc="toogle monitor ")),
+
 ]
 
 # █▀▀ █▀█ █▀█ █░█ █▀█ █▀
