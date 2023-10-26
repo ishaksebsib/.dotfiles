@@ -27,7 +27,7 @@ git clone https://github.com/ishaksebsib/.dotfiles.git ~/.config/qtile
   You can use the following one-liner command to install the dependencies mentioned in your README.md on an Arch-based system:
 
   ```bash
-  sudo pacman -S qtile python kitty rofi nemo flameshot brightnessctl alsa-utils ttf-jetbrains-mono ttf-font-awesome
+  sudo pacman -S qtile python kitty rofi nemo flameshot brightnessctl alsa-utils ttf-jetbrains-mono ttf-font-awesome i3lock
   ```
 
   This command will use `pacman`, the package manager for Arch Linux, to install the required packages. Make sure to run this command with `sudo` privileges to install system-wide packages.
