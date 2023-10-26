@@ -95,7 +95,10 @@ keys = [
     Key([mod], "r", lazy.spawn('rofi -show drun'), desc="Launch app Launcher"),
     # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([win], "e", lazy.spawn('nemo'), desc="Open File Managere"),
+    # Open Power Off - Shutdown - Restart Options
     Key([mod, "control"], "o", lazy.spawn('sh -c ~/.config/rofi/scripts/power'), desc="Open Power OFF Options"),
+    # Launch Lock Screen
+    Key([win], "l", lazy.spawn('i3lock -c 000000'), desc="Open Loack Screen"),
     # Key([mod], "i", lazy.spawn('bash ~/.config/qtile/scripts/wifimenu.sh'), desc="Open Wifi Menu"),
     # Launch Flameshot for screen shoot
     Key([], "Print", lazy.spawn("flameshot gui")),
