@@ -1,10 +1,12 @@
 # Exclude everything else except main config files
 *
+
 !.gitignore
 !LICENSE
 !README.md
+
+!tmux/
+!tmux/**
 !qtile/
-!qtile/**
-qtile/__pycache__/
 !kitty/
-!kitty/**
+
