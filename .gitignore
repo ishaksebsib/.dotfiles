@@ -9,3 +9,5 @@
 !tmux/**
 !qtile/
 !kitty/
+!nvim/
+!nvim/**
