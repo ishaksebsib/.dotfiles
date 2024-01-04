@@ -10,21 +10,6 @@ require("core.utils").load_mappings()
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
--- my coustom config
-
--- Remap jj to act as <Esc> in insert mode
-vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true })
-
--- Remap jj to act as <Esc> in command-line mode
-vim.api.nvim_set_keymap('c', 'jj', '<C-c>', { noremap = true })
-
--- Copy selected text to system clipboard in visual mode
-vim.api.nvim_set_keymap('x', '<C-c>', '"+y', { noremap = true, silent = true })
-
--- Remap 'p' to paste from the system clipboard in normal mode
-vim.api.nvim_set_keymap('n', 'p', '"+p', { noremap = true, silent = true })
-
-
 -- bootstrap lazy.nvim!
 if not vim.loop.fs_stat(lazypath) then
   require("core.bootstrap").gen_chadrc_template()
