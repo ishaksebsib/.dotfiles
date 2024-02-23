@@ -22,4 +22,3 @@ require("lazy").setup("plugins")
 
 -- set theme
 vim.cmd.colorscheme "catppuccin"
-
