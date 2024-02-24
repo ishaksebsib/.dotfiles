@@ -8,6 +8,7 @@
 !tmux/
 !tmux/**
 !qtile/
-!kitty/
+!alacritty/
+!alacritty/**
 !nvim/
 !nvim/**
