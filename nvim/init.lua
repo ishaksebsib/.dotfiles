@@ -20,4 +20,4 @@ require("vim-options")
 require("lazy").setup("plugins")
 
 -- set theme
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("vscode_modern")
