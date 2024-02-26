@@ -1,6 +1,5 @@
 return {
-	"numToStr/Comment.nvim",
+	"preservim/nerdcommenter",
 	config = function()
-		require("Comment").setup({})
 	end,
 }
