@@ -1,4 +1,5 @@
 return {
+	--NOTE: MAKE SURE TO Install Ripgrep on your system to have full search capabilities
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
@@ -9,6 +10,7 @@ return {
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "live grep" })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "select currently open files" })
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "help_tags" })
+			vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", { desc = "find todos" })
 			vim.keymap.set("n", "<leader>th", builtin.colorscheme, { desc = "select themes" })
 		end,
 	},
