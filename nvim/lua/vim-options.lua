@@ -24,3 +24,10 @@ vim.cmd("set tabstop=4") -- Number of spaces that a <Tab> in the file counts for
 vim.cmd("set softtabstop=4") -- Number of spaces to use when editing
 vim.cmd("set shiftwidth=4") -- Number of spaces used for autoindent
 
+
+
+-- REMAPS
+
+-- move half page and make it center
+vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz<CR>', { noremap = true, silent = true })
