@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Apply WallPaper 
-feh --bg-fill ~/Wallpaper/background.jpg 
+feh --bg-fill ~/.config/qtile/wallpaper/background.jpg 
 
 #change the theme to dark mood 
 darkman set dark 
