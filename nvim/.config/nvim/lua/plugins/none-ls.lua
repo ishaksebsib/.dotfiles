@@ -10,10 +10,13 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.biome,
 				null_ls.builtins.formatting.isort, -- formatter for python
 				null_ls.builtins.formatting.black, -- formater for python
-				-- null_ls.builtins.diagnostics.eslint-lsp,
+
+				-- for matting for javascript biome and prettierd use biome for better performance and prettierd for opinionated formatting
+				-- comment out biome if you want to use prettierd or vice versa
+				null_ls.builtins.formatting.prettierd,
+				--null_ls.builtins.formatting.biome,
 			},
 			-- uncomment if you want auto format when save
 
