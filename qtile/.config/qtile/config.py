@@ -47,8 +47,8 @@ def move_app_to_next_screen():
     def _inner(qtile):
         screen = qtile.current_screen.index
         next_screen = (screen + 1) % len(qtile.screens)
-        qtile.focus_screen(next_screen)
         qtile.current_window.toscreen(next_screen)
+        qtile.focus_screen(next_screen)
     return _inner
 
 
