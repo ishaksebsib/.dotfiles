@@ -42,11 +42,22 @@ colors = {
     "fg_normal": "#FFFFFF",   # Foreground color
 }
 
+def move_app_to_next_screen():
+    @lazy.function
+    def _inner(qtile):
+        screen = qtile.current_screen.index
+        next_screen = (screen + 1) % len(qtile.screens)
+        qtile.focus_screen(next_screen)
+        qtile.current_window.toscreen(next_screen)
+    return _inner
 
 
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
+    # Switch between screens
+    Key([mod], "0", lazy.next_screen(), desc="Move focus to next monitor"),
+    Key([mod], "o", move_app_to_next_screen(), desc="Move current window to next monitor"),
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
