@@ -6,7 +6,7 @@
 vim.g.mapleader = " "
 
 -- Map 'jj' to act as Escape in insert mode
-vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
+--vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
 
 -- Set cliipBoard system's clipboard
 vim.cmd("set clipboard+=unnamedplus")
