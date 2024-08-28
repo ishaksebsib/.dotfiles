@@ -132,3 +132,7 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f "/home/pro/.ghcup/env" ] && . "/home/pro/.ghcup/env" # ghcup-env
 . "$HOME/.cargo/env"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+export PATH=$PATH:$HOME/go/bin
