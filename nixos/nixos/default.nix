@@ -26,7 +26,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  time.timeZone = "Africa/Addis_Ababa";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -99,17 +99,16 @@
 			noto-fonts
 			noto-fonts-emoji
 			font-awesome
-			monaspace
-			(nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
-		];
-
-		fontconfig = {
-					defaultFonts = {
-						monospace = [ "Fira Code Nerd Font"];
-					};
-		};
-
-	};
+			fira-code
+			fira-sans
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    ];
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "Fira Code Nerd Font" ];
+      };
+    };
+  };
 
 
 
