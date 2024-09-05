@@ -1,13 +1,12 @@
 { pkgs, ... }:
 {
-
-nixpkgs.config.qt5 = {
-  enable = true;
-  platformTheme = "qt5ct"; 
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
     style = {
-			name = "Adwaita-dark";
-			package = pkgs.gnome.gnome-themes-extra;
+      name = "gtk2";
+      package = pkgs.libsForQt5.breeze-qt5;
     };
-};
+  };
 
 }

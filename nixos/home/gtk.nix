@@ -3,12 +3,6 @@
   gtk = {
     enable = true;
 
-		cursorTheme = {
-			name = "Vanilla-DMZ";
-			package = pkgs.vanilla-dmz;
-			size = 30;
-		};
-
     iconTheme = {
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
@@ -24,4 +18,19 @@
 		};
 
   };
+
+	home.pointerCursor = {
+		name = "phinger-cursors-dark";
+		package = pkgs.phinger-cursors;
+		size = 12;
+		gtk.enable = true;
+	};
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      gtk-theme = "Adwaita-dark";
+      color-scheme = "prefer-dark";
+    };
+  };
+
 }
