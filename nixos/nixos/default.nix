@@ -81,7 +81,7 @@
 		 #network
      networkmanagerapplet
 		 bluez
-		 #bluez-utils
+		 blueman
 
 		 #audio
 		 pipewire
@@ -98,6 +98,7 @@
 		packages = with pkgs; [
 			noto-fonts
 			noto-fonts-emoji
+			font-awesome
 			monaspace
 			(nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
 		];
