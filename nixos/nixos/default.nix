@@ -81,7 +81,7 @@
 		 #network
      networkmanagerapplet
 		 bluez
-		 bluez-utils
+		 #bluez-utils
 
 		 #audio
 		 pipewire

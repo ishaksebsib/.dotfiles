@@ -23,7 +23,7 @@
 	   google-chrome
 	   libreoffice
 		 vlc
-		 sysmontask
+		 #sysmontask
 		 protonvpn-gui
 		 postman
 		 telegram-desktop
