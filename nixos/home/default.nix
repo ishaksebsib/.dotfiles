@@ -15,6 +15,7 @@
 	   neofetch
 	   tmux
 	   zsh
+		 vimPlugins.LazyVim	
 
 		 #managers
 		 gnome.nautilus
@@ -23,6 +24,12 @@
 	   alacritty
 	   google-chrome
 	   libreoffice
+		 vlc
+		 sysmontask
+		 protonvpn-gui
+		 postman
+		 telegram-desktop
+		 mattermost-desktop
 	];
 
 	  
