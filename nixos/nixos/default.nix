@@ -99,16 +99,15 @@
 			noto-fonts
 			noto-fonts-emoji
 			font-awesome
-			fira-code
-			fira-sans
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    ];
-    fontconfig = {
-      defaultFonts = {
-        monospace = [ "Fira Code Nerd Font" ];
-      };
-    };
-  };
+			monaspace
+			(nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+		];
+		fontconfig = {
+					defaultFonts = {
+						monospace = [ "Fira Code Nerd Font"];
+					};
+		};
+	};
 
 
 
