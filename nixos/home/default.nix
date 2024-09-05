@@ -3,6 +3,7 @@
 {
 	imports = [
 	 ./git.nix
+	 ./gtk.nix
 	];
 	home.username = "pro";
 	home.homeDirectory = "/home/pro";
