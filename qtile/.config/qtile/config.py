@@ -58,6 +58,7 @@ keys = [
     # Switch between screens
     Key([mod], "0", lazy.next_screen(), desc="Move focus to next monitor"),
     Key([mod], "o", move_app_to_next_screen(), desc="Move current window to next monitor"),
+
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
@@ -66,6 +67,7 @@ keys = [
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key([mod, "shift"], "f", lazy.hide_show_bar(), desc="Toggle show and hide toolbar/taskbar"), 
+
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
