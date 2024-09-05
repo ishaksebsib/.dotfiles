@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Apply WallPaper 
 feh --bg-fill ~/.config/qtile/Assets/Wallpaper/background.jpg
