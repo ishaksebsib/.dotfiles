@@ -5,6 +5,7 @@
 	 ./git.nix
 	 ./gtk.nix
 	 ./qt.nix
+	 ./languages.nix
 	];
 	home.username = "pro";
 	home.homeDirectory = "/home/pro";
