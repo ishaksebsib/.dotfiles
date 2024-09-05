@@ -16,6 +16,9 @@
 	   tmux
 	   zsh
 
+		 #managers
+		 gnome.nautilus
+
 	   # apps
 	   alacritty
 	   google-chrome
