@@ -15,7 +15,7 @@
 	   neofetch
 	   tmux
 	   zsh
-		 vimPlugins.LazyVim	
+		 lazygit
 
 
 	   # apps
@@ -29,10 +29,12 @@
 		 telegram-desktop
 		 mattermost-desktop
 		 nautilus
+     transmission_4-gtk
 	];
 
 	  
 	home.stateVersion = "23.11";
 
 	programs.home-manager.enable = true;
+  programs.obs-studio.enable = true;
 }
