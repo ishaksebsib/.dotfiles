@@ -17,8 +17,6 @@
 	   zsh
 		 vimPlugins.LazyVim	
 
-		 #managers
-		 gnome.nautilus
 
 	   # apps
 	   alacritty
@@ -30,6 +28,7 @@
 		 postman
 		 telegram-desktop
 		 mattermost-desktop
+		 nautilus
 	];
 
 	  
