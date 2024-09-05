@@ -81,6 +81,24 @@
      networkmanagerapplet
      
   ];
+	
+	fonts = {
+		packages = with pkgs; [
+			noto-fonts
+			noto-fonts-emoji
+			monaspace
+			(nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+		];
+
+		fontconfig = {
+					defaultFonts = {
+						monospace = [ "Fira Code Nerd Font"];
+					};
+		};
+
+	};
+
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
