@@ -73,12 +73,24 @@
      rofi
      dunst
      picom
-     alsa-utils
      brightnessctl
      flameshot # for screen shoot
      i3lock
      feh
+
+		 #network
      networkmanagerapplet
+		 bluez
+		 bluez-utils
+
+		 #audio
+		 pipewire
+     alsa-utils
+
+		 #cli tools
+		 ripgrep
+		 xclip
+		 tree
      
   ];
 	
