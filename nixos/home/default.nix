@@ -4,6 +4,7 @@
 	imports = [
 	 ./git.nix
 	 ./gtk.nix
+	 ./qt.nix
 	];
 	home.username = "pro";
 	home.homeDirectory = "/home/pro";

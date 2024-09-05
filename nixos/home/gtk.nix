@@ -4,7 +4,7 @@
     enable = true;
 
     cursorTheme = {
-      name = "BreezeX Dark";
+      name = "Vanilla-DMZ";
       package = pkgs.vanilla-dmz;
       size = 30;
     };
@@ -13,5 +13,11 @@
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
     };
+
+		theme = {
+        name = "Adwaita-dark";
+        package = pkgs.gnome.gnome-themes-extra;
+    };
+
   };
 }
