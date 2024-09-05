@@ -3,11 +3,11 @@
   gtk = {
     enable = true;
 
-    cursorTheme = {
-      name = "Vanilla-DMZ";
-      package = pkgs.vanilla-dmz;
-      size = 30;
-    };
+		cursorTheme = {
+			name = "Vanilla-DMZ";
+			package = pkgs.vanilla-dmz;
+			size = 30;
+		};
 
     iconTheme = {
       name = "Adwaita";
@@ -15,9 +15,13 @@
     };
 
 		theme = {
-        name = "Adwaita-dark";
-        package = pkgs.gnome.gnome-themes-extra;
-    };
+				name = "Adwaita-dark";
+				package = pkgs.gnome.gnome-themes-extra;
+		};
+
+		gtk3 = {
+			extraConfig.gtk-application-prefer-dark-theme = true;
+		};
 
   };
 }

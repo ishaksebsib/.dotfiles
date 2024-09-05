@@ -1,8 +1,13 @@
 { pkgs, ... }:
 {
- qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
- };
+
+nixpkgs.config.qt5 = {
+  enable = true;
+  platformTheme = "qt5ct"; 
+    style = {
+			name = "Adwaita-dark";
+			package = pkgs.gnome.gnome-themes-extra;
+    };
+};
+
 }
