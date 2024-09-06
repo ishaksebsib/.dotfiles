@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+			./audio.nix
+			./bluetooth.nix
       ./qtile.nix
     ];
 
@@ -67,34 +69,19 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-
-     # qtileWM dep's
-     rofi
-     dunst
-     picom
-     brightnessctl
-     flameshot # for screen shoot
-     i3lock
-     feh
 
 		 #network
+		 curl
+     wget
      networkmanagerapplet
-		 bluez
-		 blueman
-
-		 #audio
-		 pipewire
-     alsa-utils
 
 		 #cli tools
-		 curl
 		 ripgrep
 		 xclip
 		 tree
 		 ncdu
 		 p7zip
-     
+		 unzip   
   ];
 	
 	fonts = {

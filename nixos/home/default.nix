@@ -25,6 +25,7 @@
 	   alacritty
 	   google-chrome
 	   libreoffice
+		 evince
 		 vlc
 		 wsysmon
 		 protonvpn-gui
