@@ -36,7 +36,8 @@ win = "mod4"
 terminal = "alacritty"
 
 # BASIC VARIABLES 
-fonts=["JetBrainsMono Nerd Font","Fira Code Nerd Font"]
+fonts={"normal": "JetBrainsMono Nerd Font Bold","nerd":"Fira Code Nerd Font Bold", "bold":"JetBrains Mono Bold"}
+fonts_size={"small": 12,"normal":14, "larg":16}
 colors = {
     "bg_normal": "#000000",   # Background color
     "fg_normal": "#FFFFFF",   # Foreground color
@@ -165,33 +166,18 @@ for i in groups:
                 lazy.window.togroup(i.name, switch_group=True),
                 desc="Switch to & move focused window to group {}".format(i.name),
             ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
         ]
     )
 
 layouts = [
     layout.Columns(border_focus_stack=["#4B427E", "#353446"], border_width=3 , border_focus = "#4C566A" ),
     layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
-    font=fonts[0],
-    fontsize=10,
-    padding=3,
+    font=fonts["bold"],
+    fontsize=fonts_size["normal"],
+    padding=4,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -226,8 +212,9 @@ screens = [
 
 
                 widget.GroupBox(
-                    fontsize=14,
-                    borderwidth=6,
+                    font=fonts["bold"],
+                    fontsize=fonts_size["small"],
+                    borderwidth=8,
                     highlight_method='block',
                     active='#5699AF',
                     #active='#6272A4',
@@ -267,8 +254,8 @@ screens = [
                     background='#353446',
                     foreground='#CAA9E0',
                     fmt='{}',
-                    font="JetBrains Mono Bold",
-                    fontsize=13,
+                    font=fonts["normal"],
+                    fontsize=fonts_size["normal"],
                 ),
 
 
@@ -277,44 +264,12 @@ screens = [
                 ),
 
 
-                # widget.Image(
-                #     filename='~/.config/qtile/Assets/search.png',
-                #     margin=2,
-                #     background='#282738',
-                #     mouse_callbacks={"Button1": search},
-                # ),
-
-                # widget.TextBox(
-                #     fmt='Search',
-                #     background='#282738',
-                #     font="JetBrains Mono Bold",
-                #     fontsize=13,
-                #     foreground='#CAA9E0',
-                #     mouse_callbacks={"Button1": search},
-                # ),
-
-
                 widget.Image(
                     filename='~/.config/qtile/Assets/4.png',
                 ),
 
 
-                # widget.WindowName(
-                #     background = '#353446',
-                #     format = "{name}",
-                #     font='JetBrains Mono Bold',
-                #     foreground='#CAA9E0',
-                #     empty_group_string = 'Desktop',
-                #     fontsize=13,
-
-                # ),
-
                 widget.TextBox(text=" ",background='#353446', width=bar.STRETCH), # Stracher to make it full screen
-
-
-                # widget.Image(
-                #     filename='~/.config/qtile/Assets/3.png',
-                # ),
 
 
                 widget.Systray(
@@ -323,67 +278,11 @@ screens = [
                 ),
 
 
-                # widget.TextBox(
-                #     text=' ',
-                #     background='#282738',
-                # ),
-
-
-                # widget.Image(
-                #     filename='~/.config/qtile/Assets/6.png',
-                #     background='#353446',
-                # ),
-
-
-                # widget.Image(
-                # filename='~/.config/qtile/Assets/Drop1.png',
-                # ),
-
-                # widget.Net(
-                # format=' {up}   {down} ',
-                # background='#353446',
-                # foreground='#CAA9E0',
-                # font="JetBrains Mono Bold",
-                # prefix='k',
-                # ),
-
-                # widget.Image(
-                    # filename='~/.config/qtile/Assets/2.png',
-                # ),
-
-                # widget.Spacer(
-                    # length=8,
-                    # background='#353446',
-                # ),
-
-
-                # widget.Image(
-                #     filename='~/.config/qtile/Assets/Misc/ram.png',
-                #     background='#353446',
-                # ),
-
 
                 widget.Spacer(
                     length=-7,
                     background='#353446',
                 ),
-
-
-                # widget.Memory(
-                #     background='#353446',
-                #     format='{MemUsed: .0f}{mm}',
-                #     foreground='#CAA9E0',
-                #     font="JetBrains Mono Bold",
-                #     fontsize=13,
-                #     update_interval=5,
-                # ),
-
-
-                # widget.Image(
-                # filename='~/.config/qtile/Assets/Drop2.png',
-                # ),
-
-
 
                 widget.Image(
                     filename='~/.config/qtile/Assets/2.png',
@@ -404,11 +303,11 @@ screens = [
 
 
                 widget.Battery(
-                    font='JetBrains Mono Bold',
                     background='#353446',
                     foreground='#CAA9E0',
                     format='{percent:2.0%}',
-                    fontsize=13,
+                    font=fonts["normal"],
+                    fontsize=fonts_size["small"],
                 ),
 
 
@@ -422,27 +321,11 @@ screens = [
                     background='#353446',
                 ),
 
-
-                # widget.Battery(format=' {percent:2.0%}',
-                    # font="JetBrains Mono ExtraBold",
-                    # fontsize=12,
-                    # padding=10,
-                    # background='#353446',
-                # ),
-
-                # widget.Memory(format='﬙{MemUsed: .0f}{mm}',
-                    # font="JetBrains Mono Bold",
-                    # fontsize=12,
-                    # padding=10,
-                    # background='#4B4D66',
-                # ),
-
                 widget.Volume(
-                    font='JetBrainsMono Nerd Font',
                     theme_path='~/.config/qtile/Assets/Volume/',
                     emoji=True,
-                    fontsize=13,
                     background='#353446',
+                    fontsize=fonts_size["small"],
                 ),
 
 
@@ -453,10 +336,10 @@ screens = [
 
 
                 widget.Volume(
-                    font='JetBrains Mono Bold',
                     background='#353446',
                     foreground='#CAA9E0',
-                    fontsize=13,
+                    font=fonts["normal"],
+                    fontsize=fonts_size["small"],
                 ),
 
 
@@ -469,11 +352,9 @@ screens = [
                     format='%b %d',
                     background='#282738',
                     foreground='#CAA9E0',
-                    font="JetBrains Mono Bold",
-                    fontsize=13,
+                    font=fonts["normal"],
+                    fontsize=fonts_size["small"],
                 ),
-
-
 
                 widget.Image(
                     filename='~/.config/qtile/Assets/Misc/clock.png',
@@ -487,8 +368,8 @@ screens = [
                     format='%I:%M %p',
                     background='#282738',
                     foreground='#CAA9E0',
-                    font="JetBrains Mono Bold",
-                    fontsize=13,
+                    font=fonts["normal"],
+                    fontsize=fonts_size["small"],
                 ),
 
 
@@ -496,8 +377,6 @@ screens = [
                     length=18,
                     background='#282738',
                 ),
-
-
 
             ],
             24,
