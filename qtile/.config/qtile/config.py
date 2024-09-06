@@ -36,7 +36,7 @@ win = "mod4"
 terminal = "alacritty"
 
 # BASIC VARIABLES 
-fonts=["FontAwesome Bold","SourceCodePro-ExtraLight"]
+fonts=["JetBrainsMono Nerd Font","Fira Code Nerd Font"]
 colors = {
     "bg_normal": "#000000",   # Background color
     "fg_normal": "#FFFFFF",   # Foreground color
@@ -106,7 +106,7 @@ keys = [
     ## LAUNCHER 
     Key([mod], "r", lazy.spawn('rofi -show drun'), desc="Launch app Launcher"),
     # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([win], "e", lazy.spawn('yazi'), desc="Open File Managere"),
+    Key([win], "e", lazy.spawn('thunar'), desc="Open File Managere"),
     # Open Power Off - Shutdown - Restart Options
     Key([mod, "control"], "o", lazy.spawn('sh -c ~/.config/rofi/scripts/power'), desc="Open Power OFF Options"),
     # Launch Lock Screen
@@ -190,7 +190,7 @@ layouts = [
 
 widget_defaults = dict(
     font=fonts[0],
-    fontsize=12,
+    fontsize=10,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()

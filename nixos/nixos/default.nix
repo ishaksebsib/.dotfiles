@@ -55,9 +55,11 @@
   users.users.pro = {
     isNormalUser = true;
     description = "pro";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -94,7 +96,7 @@
 		];
 		fontconfig = {
 					defaultFonts = {
-						monospace = [ "Fira Code Nerd Font"];
+						monospace = [ "JetBrainsMono Nerd Font"];
 					};
 		};
 	};

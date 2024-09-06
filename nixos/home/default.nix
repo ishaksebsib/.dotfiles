@@ -6,6 +6,7 @@
 	 ./gtk.nix
 	 ./qt.nix
 	 ./languages.nix
+	 ./zsh.nix
 	];
 	home.username = "pro";
 	home.homeDirectory = "/home/pro";
@@ -14,10 +15,8 @@
 	   # cli tools
 	   fzf
 	   stow
-	   neovim
 	   neofetch
 	   tmux
-	   zsh
 		 lazygit
 
 
@@ -35,14 +34,24 @@
 		 yazi
 		 uget
      transmission_4-gtk
+
+
+		# Thunar file manager and plugins
+		xfce.thunar
+		xfce.thunar-volman
+		xfce.thunar-archive-plugin
+		xfce.thunar-media-tags-plugin
+
 	];
 
-	  
-	home.stateVersion = "23.11";
 
 	programs.home-manager.enable = true;
   programs.obs-studio.enable = true;
+	programs. neovim = { enable = true; defaultEditor = true; }; 
   home.sessionVariables = {
     TERMINAL = "alacritty";
+    DEFAULT_TERMINAL = "alacritty";
   };
+
+	home.stateVersion = "23.11";
 }
