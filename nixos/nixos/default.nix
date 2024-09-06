@@ -88,9 +88,12 @@
      alsa-utils
 
 		 #cli tools
+		 curl
 		 ripgrep
 		 xclip
 		 tree
+		 ncdu
+		 p7zip
      
   ];
 	

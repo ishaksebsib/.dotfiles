@@ -26,12 +26,13 @@
 	   google-chrome
 	   libreoffice
 		 vlc
-		 #sysmontask
+		 wsysmon
 		 protonvpn-gui
 		 postman
 		 telegram-desktop
 		 mattermost-desktop
-		 nautilus
+		 yazi
+		 uget
      transmission_4-gtk
 	];
 
@@ -40,4 +41,7 @@
 
 	programs.home-manager.enable = true;
   programs.obs-studio.enable = true;
+  home.sessionVariables = {
+    TERMINAL = "alacritty";
+  };
 }

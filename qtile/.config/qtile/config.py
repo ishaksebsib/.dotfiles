@@ -100,13 +100,13 @@ keys = [
     Key([win], "c", lazy.spawn('code'), desc="launch vscode"),
     Key([win], "t", lazy.spawn('telegram-desktop'), desc="Open File Managere"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key(["control", "shift"], "Escape", lazy.spawn('sysmontask'), desc="Open task manager"),
+    Key(["control", "shift"], "Escape", lazy.spawn('WSysMon'), desc="Open task manager"),
     # Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
     ## LAUNCHER 
     Key([mod], "r", lazy.spawn('rofi -show drun'), desc="Launch app Launcher"),
     # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([win], "e", lazy.spawn('nemo'), desc="Open File Managere"),
+    Key([win], "e", lazy.spawn('yazi'), desc="Open File Managere"),
     # Open Power Off - Shutdown - Restart Options
     Key([mod, "control"], "o", lazy.spawn('sh -c ~/.config/rofi/scripts/power'), desc="Open Power OFF Options"),
     # Launch Lock Screen
