@@ -31,7 +31,7 @@
 		 vlc
 		 wsysmon
 		 protonvpn-gui
-		 postman
+		 insomnia
 		 telegram-desktop
 		 mattermost-desktop
 		 yazi
