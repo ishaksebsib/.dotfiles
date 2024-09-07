@@ -7,6 +7,7 @@
 	 ./qt.nix
 	 ./languages.nix
 	 ./zsh.nix
+	 ./tmux.nix
 	];
 	home.username = "pro";
 	home.homeDirectory = "/home/pro";
