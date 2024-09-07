@@ -13,6 +13,8 @@
 	home.homeDirectory = "/home/pro";
 
 	home.packages = with pkgs; [
+		 # libs
+		 mesa
 	   # cli tools
 	   fzf
 	   stow
