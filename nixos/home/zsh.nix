@@ -25,4 +25,9 @@
     ];
 
 	};
+
+	programs.zsh.initExtra = ''
+	# SETUP UP FZF KEY BINDING AND FZY COMPLITION
+	eval "$(fzf --zsh)"
+	'';
 }
