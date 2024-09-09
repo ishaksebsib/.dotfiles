@@ -56,7 +56,7 @@
     isNormalUser = true;
     description = "pro";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
   };
   programs.zsh.enable = true;
@@ -101,6 +101,9 @@
 		};
 	};
 
+  virtualisation.docker = {
+    enable = true;
+  };
 
 
   # Some programs need SUID wrappers, can be configured further or are
