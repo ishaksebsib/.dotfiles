@@ -1,12 +1,18 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-	services.xserver.enable = true;
-	services.xserver.layout = "us";
-	services.xserver.windowManager.qtile.enable = true;
-	services.xserver.xkbOptions = "caps:swapescape";
-  programs.dconf.enable = true;
-
+	services.xserver = {
+		enable = true;
+		windowManager.qtile.enable = true;
+		layout = "us";
+		xkbOptions = "caps:swapescape";
+		libinput = {
+			enable = true;
+			touchpad = {
+				naturalScrolling = true;
+			};
+		};
+	};
 
   environment.systemPackages = with pkgs; [ 
      # qtileWM dep's

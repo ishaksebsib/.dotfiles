@@ -85,6 +85,7 @@
 		 p7zip
 		 unzip   
   ];
+
 	
 	fonts = {
 		packages = with pkgs; [
