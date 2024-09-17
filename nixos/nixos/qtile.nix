@@ -24,4 +24,6 @@
      i3lock
      feh
 	];
+
+  programs.dconf.enable = true;
 }
