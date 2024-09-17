@@ -28,7 +28,8 @@
 	   alacritty
 	   google-chrome
 	   libreoffice
-		 evince
+		 #evince
+		 zathura
 		 vlc
 		 wsysmon
 		 protonvpn-gui
