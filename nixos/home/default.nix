@@ -8,6 +8,7 @@
 	 ./qt.nix
 	 ./languages.nix
 	 ./zsh.nix
+	 ./zathura.nix
 	 ./tmux.nix
 	];
 	home.username = "pro";
@@ -29,7 +30,6 @@
 	   google-chrome
 	   libreoffice
 		 #evince
-		 zathura
 		 vlc
 		 wsysmon
 		 protonvpn-gui
