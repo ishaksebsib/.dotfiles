@@ -58,5 +58,5 @@
     DEFAULT_TERMINAL = "alacritty";
   };
 
-	home.stateVersion = "23.11";
+	home.stateVersion = "24.05";
 }
