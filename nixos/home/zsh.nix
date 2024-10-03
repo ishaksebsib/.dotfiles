@@ -27,6 +27,10 @@
 	};
 
 	programs.zsh.initExtra = ''
+	# Add common paths
+	export PATH="/usr/local/bin:$PATH"
+	export PATH="/opt/bin:/opt/local/bin:$PATH"
+
 	# SETUP UP FZF KEY BINDING AND FZY COMPLITION
 	eval "$(fzf --zsh)"
 	'';
