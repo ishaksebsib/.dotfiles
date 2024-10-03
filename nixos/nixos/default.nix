@@ -59,9 +59,12 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
   };
+
+	# Run unpatched dynamic binaries on NixOS
+	programs.nix-ld.enable = true;
+
   programs.zsh.enable = true;
 
-  #programs.nix-ld.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -87,19 +90,19 @@
 		 unzip   
 
 	 # Create an FHS environment using the command `fhs`, enabling the execution of non-NixOS packages in NixOS!
-		(let base = pkgs.appimageTools.defaultFhsEnvArgs; in
-			pkgs.buildFHSUserEnv {
-				name = "fhs";
-				targetPkgs = pkgs: (
-					base.targetPkgs pkgs ++ [
-						pkgs.pkg-config
-						pkgs.ncurses
-					]
-				);
-				profile = "export FHS=1";
-				runScript = "zsh";
-				extraOutputsToInstall = [ "bin" "lib" "dev" ];  # Use common outputs or omit this line if unnecessary
-			})
+		#(let base = pkgs.appimageTools.defaultFhsEnvArgs; in
+			#pkgs.buildFHSUserEnv {
+				#name = "fhs";
+				#targetPkgs = pkgs: (
+					#base.targetPkgs pkgs ++ [
+						#pkgs.pkg-config
+						#pkgs.ncurses
+					#]
+				#);
+				#profile = "export FHS=1";
+				#runScript = "zsh";
+				#extraOutputsToInstall = [ "bin" "lib" "dev" ];  # Use common outputs or omit this line if unnecessary
+			#})
 
   ];
 
