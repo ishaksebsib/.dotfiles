@@ -52,7 +52,7 @@
 
 	programs.home-manager.enable = true;
   programs.obs-studio.enable = true;
-	programs. neovim = { enable = true; defaultEditor = true; }; 
+	programs.neovim = { enable = true; defaultEditor = true; }; 
   home.sessionVariables = {
     TERMINAL = "alacritty";
     DEFAULT_TERMINAL = "alacritty";
