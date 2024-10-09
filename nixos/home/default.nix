@@ -28,6 +28,7 @@
 	   # apps
 	   alacritty
 	   google-chrome
+		 obsidian
 	   libreoffice
 		 #evince
 		 vlc
