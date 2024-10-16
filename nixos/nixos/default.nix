@@ -62,6 +62,10 @@
 
 	# Run unpatched dynamic binaries on NixOS
 	programs.nix-ld.enable = true;
+	programs.nix-ld.libraries = with pkgs; [
+		# missing dynamic libraries for unpackaged software
+		zlib
+	];
 
   programs.zsh.enable = true;
 
@@ -90,7 +94,6 @@
 		 unzip   
 		
 		 #libs
-		 zlib
 
 	 # Create an FHS environment using the command `fhs`, enabling the execution of non-NixOS packages in NixOS!
 		#(let base = pkgs.appimageTools.defaultFhsEnvArgs; in
