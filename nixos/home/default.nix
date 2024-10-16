@@ -29,6 +29,7 @@
 	   alacritty
 	   google-chrome
 		 obsidian
+		 syncthing
 	   libreoffice
 		 #evince
 		 vlc
