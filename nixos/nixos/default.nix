@@ -96,19 +96,20 @@
 		 #libs
 
 	 # Create an FHS environment using the command `fhs`, enabling the execution of non-NixOS packages in NixOS!
-		#(let base = pkgs.appimageTools.defaultFhsEnvArgs; in
-			#pkgs.buildFHSUserEnv {
-				#name = "fhs";
-				#targetPkgs = pkgs: (
-					#base.targetPkgs pkgs ++ [
-						#pkgs.pkg-config
-						#pkgs.ncurses
-					#]
-				#);
-				#profile = "export FHS=1";
-				#runScript = "zsh";
-				#extraOutputsToInstall = [ "bin" "lib" "dev" ];  # Use common outputs or omit this line if unnecessary
-			#})
+		(let base = pkgs.appimageTools.defaultFhsEnvArgs; in
+			pkgs.buildFHSUserEnv {
+				name = "fhs";
+				targetPkgs = pkgs: (
+					base.targetPkgs pkgs ++ [
+						pkgs.pkg-config
+						pkgs.ncurses
+						pkgs.zlib
+					]
+				);
+				profile = "export FHS=1";
+				runScript = "zsh";
+				extraOutputsToInstall = [ "bin" "lib" "dev" ];  # Use common outputs or omit this line if unnecessary
+			})
 
   ];
 
