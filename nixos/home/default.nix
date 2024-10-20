@@ -35,6 +35,7 @@
 		 vlc
 		 wsysmon
 		 protonvpn-gui
+		 gnome.gnome-keyring # dep for protonvpn-gui
 		 insomnia
 		 telegram-desktop
 		 mattermost-desktop
