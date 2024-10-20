@@ -34,8 +34,7 @@
 		 #evince
 		 vlc
 		 wsysmon
-		 protonvpn-gui
-		 gnome.gnome-keyring # dep for protonvpn-gui
+		 protonvpn-cli
 		 insomnia
 		 telegram-desktop
 		 mattermost-desktop
