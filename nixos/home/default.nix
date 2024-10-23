@@ -34,7 +34,6 @@
 		 #evince
 		 vlc
 		 wsysmon
-		 riseup-vpn
 		 insomnia
 		 telegram-desktop
 		 mattermost-desktop
