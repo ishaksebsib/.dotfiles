@@ -5,6 +5,7 @@
 		gcc
 		cargo
 		rustc
+		rust-analyzer
 		go
 		typescript
 		nodejs_22
