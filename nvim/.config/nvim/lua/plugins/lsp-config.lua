@@ -16,7 +16,7 @@ local servers = {
 	"gopls",
 	"html",
 	"jsonls",
-	"tsserver",
+	"ts_ls",
 	"lua_ls",
 	"pyright",
 	"rust_analyzer",
