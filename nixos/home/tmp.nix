@@ -8,6 +8,5 @@
 		#boost
 		#guile
 		#boost.dev
-		#python312Packages.chromadb
 	];
 }
