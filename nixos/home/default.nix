@@ -2,6 +2,7 @@
 
 {
 	imports = [
+	 ./defaultApps.nix
 	 ./env.nix
 	 ./tmp.nix
 	 ./git.nix
