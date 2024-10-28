@@ -17,7 +17,6 @@
 	home.packages = with pkgs; [
 		 # libs
 		 mesa
-		 openssl
 
 	   # cli tools
 	   fzf

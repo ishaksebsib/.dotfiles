@@ -12,6 +12,5 @@
 		prettierd
 		python312Packages.pip
 		python312Packages.ipython
-		pkg-config
 	];
 }
