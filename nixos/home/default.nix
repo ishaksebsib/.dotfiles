@@ -2,6 +2,7 @@
 
 {
 	imports = [
+	 ./env.nix
 	 ./tmp.nix
 	 ./git.nix
 	 ./gtk.nix
@@ -51,14 +52,10 @@
 
 	];
 
-
-	programs.home-manager.enable = true;
   programs.obs-studio.enable = true;
 	programs.neovim = { enable = true; defaultEditor = true; }; 
-  home.sessionVariables = {
-    TERMINAL = "alacritty";
-    DEFAULT_TERMINAL = "alacritty";
-  };
 
 	home.stateVersion = "24.05";
+	programs.home-manager.enable = true;
+
 }
