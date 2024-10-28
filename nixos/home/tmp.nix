@@ -2,12 +2,12 @@
 
 {
 	home.packages = with pkgs; [
-		cmake
-		gnumake42
-		cxxtest
-		boost
-		guile
-		boost.dev
-		python312Packages.chromadb
+		#cmake
+		#gnumake42
+		#cxxtest
+		#boost
+		#guile
+		#boost.dev
+		#python312Packages.chromadb
 	];
 }
