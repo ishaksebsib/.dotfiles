@@ -54,7 +54,16 @@
 	];
 
   programs.obs-studio.enable = true;
-	programs.neovim = { enable = true; defaultEditor = true; }; 
+
+	programs.neovim = { 
+		enable = true; 
+		defaultEditor = true; 
+
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+
+	}; 
 
 	home.stateVersion = "24.05";
 	programs.home-manager.enable = true;
