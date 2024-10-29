@@ -4,6 +4,7 @@
 	imports = [
 	 ./defaultApps.nix
 	 ./env.nix
+	 ./terminals.nix
 	 ./tmp.nix
 	 ./git.nix
 	 ./gtk.nix
@@ -29,7 +30,6 @@
 
 
 	   # apps
-	   alacritty
 	   google-chrome
 		 obsidian
 		 syncthing
