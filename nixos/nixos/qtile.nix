@@ -20,7 +20,7 @@
      dunst
      picom
      brightnessctl
-     flameshot # for screen shoot
+		 rofi-screenshot
      i3lock
      feh
 	];

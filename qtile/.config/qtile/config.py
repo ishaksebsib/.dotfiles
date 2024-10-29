@@ -114,7 +114,7 @@ keys = [
     Key([win], "l", lazy.spawn('i3lock -c 000000'), desc="Open Loack Screen"),
     # Key([mod], "i", lazy.spawn('bash ~/.config/qtile/scripts/wifimenu.sh'), desc="Open Wifi Menu"),
     # Launch Flameshot for screen shoot
-    Key([], "Print", lazy.spawn("flameshot gui")),
+    Key([], "Print", lazy.spawn("rofi-screenshot"), desc="Take Screenshot"),
 
 
     # CONTROAL BRIGHTNESS
