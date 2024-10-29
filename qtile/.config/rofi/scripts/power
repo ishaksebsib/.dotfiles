@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
--- !/bin/bash
 
 options=$(echo -e "  Poweroff\n  Restart\n  Suspend\n  Logout")
 
