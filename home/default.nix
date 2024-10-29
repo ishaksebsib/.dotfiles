@@ -2,6 +2,7 @@
 
 {
 	imports = [
+	 ./dotfiles.nix
 	 ./defaultApps.nix
 	 ./env.nix
 	 ./terminals.nix
