@@ -31,14 +31,14 @@
     {
 
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        pro = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./nixos ];
         };
       };
 
       homeConfigurations = {
-        "pro@nixos" = home-manager.lib.homeManagerConfiguration {
+        "pro@pro" = home-manager.lib.homeManagerConfiguration {
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home ];
