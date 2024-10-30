@@ -12,25 +12,37 @@
 	};
 	
 
-	outputs = inputs@{ nixpkgs, home-manager, ... }: {
-		nixosConfigurations = {
-		  pro = nixpkgs.lib.nixosSystem {
-			system = "x86_64-linux";
-			specialArgs = { inherit inputs; };
-			modules = [
-				./nixos/default.nix
-				
-				home-manager.nixosModules.home-manager 
-				{
-					home-manager.useGlobalPkgs = true;
-					home-manager.useUserPackages = true;
-					home-manager.users.pro = import ./home/default.nix;
-					home-manager.extraSpecialArgs = { inherit inputs; };				
-				}
-				];
-			};
-		};
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , ...
+    } @ inputs:
+    let
+      inherit (self) outputs;
+      systems = [ "x86_64-linux" ];
+      lib = nixpkgs.lib // home-manager.lib;
+      forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+      pkgsFor = lib.genAttrs systems (system: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      });
+    in
+    {
 
-	};
+      nixosConfigurations = {
+        nixos = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./nixos ];
+        };
+      };
 
+      homeConfigurations = {
+        "pro@nixos" = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home ];
+        };
+      };
+    };
 }
