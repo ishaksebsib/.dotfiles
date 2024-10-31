@@ -31,7 +31,7 @@
 
 
 	   # apps
-	   google-chrome
+		 google-chrome
 		 obsidian
 		 syncthing
 	   libreoffice
