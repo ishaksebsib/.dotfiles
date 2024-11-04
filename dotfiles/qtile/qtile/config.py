@@ -98,6 +98,7 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([win], "e", lazy.spawn('thunar'), desc="Launch File Manager"),
     Key([win], "w", lazy.spawn('google-chrome-stable'),desc='launch google chrome'),
+    Key([win], "n", lazy.spawn('obsidian'),desc='launch obsidian (note taking app)'),
     Key([win], "t", lazy.spawn('telegram-desktop'), desc="Launch Telegram"),
     Key([], "Print", lazy.spawn("rofi-screenshot"), desc="Launch Screenshot"),
     Key([win], "c", lazy.spawn('code'), desc="Launch Visual Studio Code"),
