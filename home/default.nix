@@ -44,6 +44,7 @@
 		 yazi
 		 uget
      transmission_4-gtk
+		 docker-compose
 
 
 		# Thunar file manager and plugins
