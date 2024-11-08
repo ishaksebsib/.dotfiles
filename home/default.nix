@@ -46,6 +46,9 @@
      transmission_4-gtk
 		 docker-compose
 
+		 # shell scripts
+		 (import ./open.nix { inherit pkgs; })
+
 
 		# Thunar file manager and plugins
 		xfce.thunar
