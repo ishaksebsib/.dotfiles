@@ -44,21 +44,19 @@
 		 yazi
 		 uget
      transmission_4-gtk
-		 docker-compose
+		 obs-studio
 
+		 # Thunar file manager and plugins
+		 xfce.thunar
+		 xfce.thunar-volman
+		 xfce.thunar-archive-plugin
+		 xfce.thunar-media-tags-plugin
+
+		
 		 # shell scripts
 		 (import ./open.nix { inherit pkgs; })
 
-
-		# Thunar file manager and plugins
-		xfce.thunar
-		xfce.thunar-volman
-		xfce.thunar-archive-plugin
-		xfce.thunar-media-tags-plugin
-
 	];
-
-  programs.obs-studio.enable = true;
 
 	programs.neovim = { 
 		enable = true; 
