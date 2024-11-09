@@ -54,7 +54,8 @@
 
 		
 		 # shell scripts
-		 (import ./open.nix { inherit pkgs; })
+		 (import ./scripts/open.nix { inherit pkgs; })
+		 (import ./scripts/toggle-keyboard.nix { inherit pkgs; })
 
 	];
 
