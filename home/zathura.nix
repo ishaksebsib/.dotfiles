@@ -5,6 +5,7 @@
 		options = {
 					recolor = "true";
 					smooth-scroll = "true";
+					selection-clipboard = "clipboard";
 				};
   };
 }
