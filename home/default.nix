@@ -45,7 +45,6 @@
 		 uget
      transmission_4-gtk
 		 obs-studio
-		 rustdesk
 
 		 # Thunar file manager and plugins
 		 xfce.thunar
