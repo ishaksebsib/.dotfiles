@@ -10,6 +10,7 @@
 		prettierd
 		python312Packages.pip
 		python312Packages.ipython
+		elixir_1_15
 
 		# Rust
 		cargo
