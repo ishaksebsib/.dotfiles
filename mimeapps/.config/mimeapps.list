@@ -1,0 +1,15 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/postman=Postman.desktop
+application/epub+zip=org.pwmt.zathura.desktop
+text/plain=nvim.desktop
+x-terminal-emulator=alacritty.desktop
+inode/directory=org.gnome.Nautilus.desktop
+
+[Added Associations]
+application/pdf=org.gnome.Evince.desktop;
