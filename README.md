@@ -10,4 +10,4 @@ stow [config-dir] # e.g. stow nvim for neovim config
 
 ## Screenshots
 
-![image](https://github.com/ishaksebsib/.dotfiles/assets/121272992/92e654f1-a25f-45a8-adca-15f91c0ca0dd)
+![image](https://github.com/ishaksebsib/.dotfiles/blob/main/imgs/.config/imgs/screenshot.png)
