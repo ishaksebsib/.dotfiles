@@ -9,6 +9,8 @@ return {
 	},
 
 	config = function()
-		require("leetcode").setup({})
+		require("leetcode").setup({
+			lang = "rust",
+		})
 	end
 }
