@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # File containing the list of packages
-PACKAGE_FILE="/home/pro/test/install/packages.txt"
+PACKAGE_FILE="/home/pro/.dotfiles/archlinux/packages.txt"
 
 # Check if the package file exists
 if [[ ! -f "$PACKAGE_FILE" ]]; then
