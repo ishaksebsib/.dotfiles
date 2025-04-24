@@ -1,0 +1,62 @@
+#network
+curl
+wget
+ufw
+
+# cli tools
+git
+alacritty
+fzf
+fish
+starship
+stow
+neofetch
+less
+lazygit
+yazi
+ripgrep
+xclip
+tlp
+tree
+ncdu
+p7zip
+unzip
+zoxide
+
+# apps
+google-chrome
+obsidian
+vlc
+telegram-desktop
+uget
+transmission-gtk
+obs-studio
+nautilus
+zathura
+zathura-pdf-mupdf
+#evince
+gnome-system-monitor
+postman
+rustdesk-bin
+
+# dev
+neovim
+helix
+#evil-helix-bin
+docker
+cloc
+# insomnia
+
+
+# languages
+gcc
+go
+protobuf
+ipython
+nodejs
+npm
+typescript
+prettierd
+cargo
+rust-analyzer
+readline
