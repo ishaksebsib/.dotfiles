@@ -78,7 +78,12 @@ return {
 
 			-- Fix "undefined global 'vim'" for Lua
 			lspconfig.lua_ls.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
 				settings = {
+					hint = {
+						enable = true,
+					},
 					Lua = {
 						diagnostics = {
 							globals = { "vim" }, -- Define 'vim' as a recognized global
