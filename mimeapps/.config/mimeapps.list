@@ -12,4 +12,4 @@ x-terminal-emulator=alacritty.desktop
 inode/directory=org.gnome.Nautilus.desktop
 
 [Added Associations]
-application/pdf=org.gnome.Evince.desktop;
+application/pdf=org.pwmt.zathura.desktop
