@@ -21,3 +21,14 @@ require("lazy").setup("plugins")
 
 -- set theme
 vim.cmd.colorscheme("darkplus")
+
+-- enable diagnostic signs
+vim.diagnostic.config({
+	virtual_text = {
+		source = "if_many", -- Only show source if there are multiple diagnostics
+		spacing = 4,
+	},
+	signs = true,
+	underline = true,
+	update_in_insert = false,
+})
