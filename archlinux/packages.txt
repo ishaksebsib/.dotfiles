@@ -1,3 +1,6 @@
+# write a package name on a new line to install it
+# write a ## followed by a package name to uninstall it
+
 #network
 curl
 wget
@@ -27,7 +30,7 @@ zoxide
 google-chrome
 obsidian
 vlc
-telegram-desktop
+## telegram-desktop
 uget
 transmission-gtk
 obs-studio
