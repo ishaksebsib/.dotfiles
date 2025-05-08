@@ -21,7 +21,8 @@ local servers = {
 	"pyright",
 	"rust_analyzer",
 	"tailwindcss",
-	"eslint",
+	--"eslint",
+	"biome",
 	"svelte",
 	"elmls",
 }
