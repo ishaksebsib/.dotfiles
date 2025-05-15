@@ -1,0 +1,42 @@
+;; enable kanata to process unmapped(all) keys
+(defcfg
+	process-unmapped-keys yes
+)
+
+;; define keys to be processed such as a key on the keyboard
+(defsrc
+	a s d f j k l ;
+)
+
+;; variables to be used in the keymap
+(defvar
+	tap-time 200
+	hold-time 200
+)
+
+;; alias for tap-hold
+(defalias
+	;; mapped to a key
+	;; trigers left super(window) key when tap-hold is triggered
+	a-mod (tap-hold $tap-time $hold-time a lmet)
+	s-mod (tap-hold $tap-time $hold-time s lalt)
+	d-mod (tap-hold $tap-time $hold-time d lsft)
+	f-mod (tap-hold $tap-time $hold-time f lctl)
+
+	j-mod (tap-hold $tap-time $hold-time j rctl)
+	k-mod (tap-hold $tap-time $hold-time k rsft)
+	l-mod (tap-hold $tap-time $hold-time l ralt)
+	;-mod (tap-hold $tap-time $hold-time ; rmet)
+)
+
+;; override the default keymap
+(deflayer base
+	@a-mod
+	@s-mod
+	@d-mod
+	@f-mod
+	@j-mod
+	@k-mod
+	@l-mod
+	@;-mod
+)
