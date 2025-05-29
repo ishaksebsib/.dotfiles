@@ -57,6 +57,7 @@ cloc
 gcc
 go
 protobuf
+python-pip
 ipython
 nodejs
 npm
