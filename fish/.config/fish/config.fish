@@ -5,6 +5,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+# setup go
+set -gx PATH $PATH (go env GOPATH)/bin
+
 # setup pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
