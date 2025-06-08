@@ -43,6 +43,7 @@ gnome-system-monitor
 postman
 rustdesk-bin
 proton-vpn-gtk-app
+cheese
 
 # dev
 neovim
