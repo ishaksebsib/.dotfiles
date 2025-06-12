@@ -44,6 +44,7 @@ postman
 rustdesk-bin
 proton-vpn-gtk-app
 cheese
+en-croissant
 
 # dev
 neovim
