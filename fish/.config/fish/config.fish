@@ -21,3 +21,9 @@ fzf --fish | source
 starship init fish | source
 
 zoxide init fish --cmd cd | source
+
+# load secrets
+# run chmod 600 .secrets.fish to make it only readable by user
+if test -f ./.secrets.fish
+    source ./.secrets.fish
+end
