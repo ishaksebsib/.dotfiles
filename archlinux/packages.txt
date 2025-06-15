@@ -24,6 +24,7 @@ tree
 ncdu
 p7zip
 unzip
+mprocs
 zoxide
 
 # apps
