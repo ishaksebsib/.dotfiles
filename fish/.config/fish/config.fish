@@ -5,6 +5,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+# setup cargo
+set -gx PATH $PATH "$CARGO_HOME/bin"
+
 # setup go
 set -gx PATH $PATH (go env GOPATH)/bin
 
