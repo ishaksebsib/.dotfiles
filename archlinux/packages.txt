@@ -7,6 +7,7 @@ wget
 ufw
 
 # cli tools
+base-devel
 git
 alacritty
 fzf
@@ -24,7 +25,7 @@ tree
 ncdu
 p7zip
 unzip
-mprocs
+#mprocs
 zoxide
 
 # apps
@@ -59,6 +60,7 @@ cloc
 # languages
 gcc
 go
+lua
 protobuf
 python-pip
 ipython
