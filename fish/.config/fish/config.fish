@@ -6,7 +6,7 @@ if status is-interactive
 end
 
 # setup cargo
-set -gx PATH $PATH "$CARGO_HOME/bin"
+set -gx PATH $PATH $HOME/.cargo/bin
 
 # setup go
 set -gx PATH $PATH (go env GOPATH)/bin
