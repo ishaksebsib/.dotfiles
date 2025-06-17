@@ -26,6 +26,7 @@ ncdu
 p7zip
 unzip
 #mprocs
+opencode-bin
 zoxide
 
 # apps
