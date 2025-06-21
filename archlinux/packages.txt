@@ -5,6 +5,7 @@
 curl
 wget
 ufw
+dkms
 
 # cli tools
 base-devel
