@@ -1,0 +1,5 @@
+keymap_procs: # keymap when process list is focused
+  <M-a>: { c: toggle-focus }  # New binding: Alt+a switches to terminal
+
+keymap_term: # keymap when terminal is focused
+  <M-a>: { c: toggle-focus }  # New binding: Alt+a switches to process list
