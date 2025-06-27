@@ -33,7 +33,6 @@ zoxide
 
 # apps
 cursor-bin
-github-desktop-bin
 kanata
 google-chrome
 obsidian
