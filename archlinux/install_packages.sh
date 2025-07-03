@@ -15,10 +15,10 @@ while IFS= read -r package || [[ -n "$package" ]]; do
     [[ "$package" =~ ^#.*$ || -z "$package" ]] && continue
 
     # Check if the package is already installed
-    if yay -Qi "$package" &>/dev/null; then
+    if paru -Qi "$package" &>/dev/null; then
         echo "Package '$package' is already installed."
     else
         echo "Installing package '$package'..."
-        yay -S --noconfirm "$package"
+        paru -S --noconfirm "$package"
     fi
 done < "$PACKAGE_FILE"
