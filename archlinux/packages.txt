@@ -27,7 +27,6 @@ ncdu
 p7zip
 unzip
 uv
-#mprocs
 opencode-bin
 zoxide
 
