@@ -1,0 +1,48 @@
+{
+  "hideHud": true,
+  "keyMappings": "# Insert your preferred key mappings here.\nmap l nextTab\nmap h previousTab",
+  "linkHintCharacters": "asdfghjklqwertuiopvbncxmy",
+  "settingsVersion": "2.3",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://monkeytype.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://excalidraw.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://webshell.picoctf.org/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.vimgenius.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://vimsnake.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://app.gather.town/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://leetcode.com/problems/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://app.codesignal.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.hackerrank.com/challenges/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.musicca.com/*"
+    }
+  ]
+}
