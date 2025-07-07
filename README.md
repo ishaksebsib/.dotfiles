@@ -5,7 +5,16 @@
 ```bash
 git clone https://github.com/ishaksebsib/.dotfiles.git
 cd .dotfiles
-stow [config-dir] # e.g. stow nvim for neovim config
+```
+
+## Usage
+
+```bash
+# User config (e.g. symlink to ~/ in this case ~/.config/nvim)
+stow nvim
+
+# System config (e.g. symlink to / in this case /etc/systemd/zram-generator.conf)
+sudo stow --target=/ zram-generator
 ```
 
 ## Screenshots
