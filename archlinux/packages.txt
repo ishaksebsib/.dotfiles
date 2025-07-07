@@ -7,6 +7,15 @@ wget
 ufw
 dkms
 
+# optimzation
+
+# sudo systemctl enable auto-cpufreq.service
+auto-cpufreq
+
+# sudo systemctl daemon-reexec
+# sudo systemctl start systemd-zram-setup@zram0.service
+zram-generator
+
 # cli tools
 base-devel
 git
