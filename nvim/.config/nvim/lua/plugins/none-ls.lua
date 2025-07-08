@@ -17,7 +17,7 @@ return {
 				-- comment out biome if you want to use prettierd or vice versa
 				--null_ls.builtins.formatting.prettierd,
 				null_ls.builtins.formatting.biome,
-				null_ls.builtins.diagnostics.biome,
+				--null_ls.builtins.diagnostics.prettierd,
 			},
 			-- uncomment if you want auto format when save
 
