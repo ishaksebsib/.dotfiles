@@ -116,7 +116,7 @@ return {
 	end),
 
 	-- Goto: <leader>'a … <leader>'z
-	vim.keymap.set('n', ";", function()
+	vim.keymap.set('n', "<leader>'", function()
 		local key = vim.fn.getcharstr():upper()
 		vim.cmd('normal! `' .. key)
 	end),
