@@ -9,22 +9,21 @@ function YankDiagnosticError()
 end
 
 local servers = {
-
-	"clangd",
-	"cssls",
-	"dockerls",
-	"gopls",
-	"html",
-	"jsonls",
-	"ts_ls",
-	"lua_ls",
-	"pyright",
-	"rust_analyzer",
-	"tailwindcss",
-	--"eslint",
-	"biome",
-	"svelte",
-	"elmls",
+	clangd = {},
+	cssls = {},
+	dockerls = {},
+	gopls = {},
+	html = {},
+	jsonls = {},
+	ts_ls = {},
+	pyright = {},
+	rust_analyzer = {},
+	tailwindcss = {},
+	--eslint = {},
+	biome = {},
+	svelte = {},
+	elmls = {},
+	lua_ls = { Lua = { diagnostics = { globals = { "vim" } } } },
 }
 
 return {
@@ -47,17 +46,11 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
-			for _, server in ipairs(servers) do
-				lspconfig[server].setup({
-					capabilities = capabilities, -- here we attached lsp complition to cmp nvm lsp
-				})
+			-- Set up lsp for all servers with capabilities and configurations
+			for server, cfg in pairs(servers) do
+				cfg.capabilities = capabilities
+				lspconfig[server].setup(cfg)
 			end
-
-			-- Fix "undefined global 'vim'" for Lua
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-				settings = { Lua = { diagnostics = { globals = { "vim" } } } },
-			})
 
 			-- setup lsp for all language servers
 			-- See `:help vim.lsp.*` for documentation on any of the below functions
