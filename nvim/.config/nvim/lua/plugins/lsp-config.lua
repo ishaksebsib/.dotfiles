@@ -23,7 +23,18 @@ local servers = {
 	biome = {},
 	svelte = {},
 	elmls = {},
-	lua_ls = { Lua = { diagnostics = { globals = { "vim" } } } },
+	lua_ls = {
+		settings = {
+			Lua = {
+				diagnostics = {
+					globals = { 'vim' },
+				},
+				format = {
+					enable = false,
+				},
+			},
+		},
+	}
 }
 
 return {
