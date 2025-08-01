@@ -58,16 +58,7 @@ return {
 			-- Fix "undefined global 'vim'" for Lua
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
-				settings = {
-					hint = {
-						enable = true,
-					},
-					Lua = {
-						diagnostics = {
-							globals = { "vim" }, -- Define 'vim' as a recognized global
-						},
-					},
-				},
+				settings = { Lua = { diagnostics = { globals = { "vim" } } } },
 			})
 
 			-- setup lsp for all language servers
