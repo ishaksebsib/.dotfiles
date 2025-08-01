@@ -38,16 +38,18 @@ return {
 		},
 
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
-
 			--  Ensure the servers installed
 			require("mason-tool-installer").setup { ensure_installed = servers }
 
+			-- cmp_nvim lsp capabilities plus vim protocol capabilities
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+
 			-- Set up lsp for all servers with capabilities and configurations
 			for server, cfg in pairs(servers) do
-				cfg.capabilities = capabilities
-				lspconfig[server].setup(cfg)
+				cfg.capabilities = vim.tbl_deep_extend('force', {}, capabilities, cfg.capabilities or {})
+				vim.lsp.config(server, cfg)
+				vim.lsp.enable(server)
 			end
 
 			-- setup lsp for all language servers
