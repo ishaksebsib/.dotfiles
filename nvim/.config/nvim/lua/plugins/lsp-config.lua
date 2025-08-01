@@ -28,21 +28,10 @@ local servers = {
 
 return {
 	{
-		"mason-org/mason.nvim",
-		opts = {}
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = servers,
-			})
-		end,
-	},
-	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"williamboman/mason.nvim",
+			{ 'mason-org/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+			'WhoIsSethDaniel/mason-tool-installer.nvim',
 			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",
@@ -51,6 +40,9 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
+
+			--  Ensure the servers installed
+			require("mason-tool-installer").setup { ensure_installed = servers }
 
 			-- Set up lsp for all servers with capabilities and configurations
 			for server, cfg in pairs(servers) do
