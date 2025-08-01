@@ -49,37 +49,14 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
-			local function on_attach(client, bufnr)
-				-- Track inlay hint visibility per buffer using a buffer variable
-				vim.b[bufnr].inlay_hints_visible = vim.b[bufnr].inlay_hints_visible or false
-
-				local function toggle_inlay_hints()
-					if not client.server_capabilities.inlayHintProvider then
-						vim.notify("Inlay hints are not supported by this server.", vim.log.levels.WARN)
-						return
-					end
-
-					vim.b[bufnr].inlay_hints_visible = not vim.b[bufnr].inlay_hints_visible
-					vim.lsp.inlay_hint.enable(vim.b[bufnr].inlay_hints_visible, { bufnr })
-
-					local status = vim.b[bufnr].inlay_hints_visible and "enabled" or "disabled"
-					vim.notify("Inlay hints " .. status)
-				end
-
-				-- Set keymap for toggling inlay hints
-				vim.keymap.set("n", "<leader>i", toggle_inlay_hints, { buffer = bufnr, desc = "Toggle Inlay Hints" })
-			end
-
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup({
-					on_attach = on_attach,
 					capabilities = capabilities, -- here we attached lsp complition to cmp nvm lsp
 				})
 			end
 
 			-- Fix "undefined global 'vim'" for Lua
 			lspconfig.lua_ls.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
 					hint = {
