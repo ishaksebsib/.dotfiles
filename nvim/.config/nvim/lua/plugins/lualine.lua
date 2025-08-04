@@ -103,9 +103,9 @@ return {
 	end,
 
 	-- Cycle and delete buffers
-	vim.keymap.set("n", "<leader>n", ":bnext<CR>", { desc = "Next buffer" }),
-	vim.keymap.set("n", "<leader>p", ":bprevious<CR>", { desc = "Previous buffer" }),
-	vim.keymap.set("n", "<leader>w", ":bdelete<CR>", { desc = "Delete buffer" }),
+	vim.keymap.set("n", "<leader>n", "<CMD>bnext<CR>", { desc = "Next buffer" }),
+	vim.keymap.set("n", "<leader>p", "<CMD>bprevious<CR>", { desc = "Previous buffer" }),
+	vim.keymap.set("n", "<leader>w", "<CMD>bdelete<CR>", { desc = "Delete buffer" }),
 
 
 	-- Set:  <leader>ma  … <leader>mz  (lowercase key becomes uppercase mark)
