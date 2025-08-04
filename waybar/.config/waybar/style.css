@@ -7,7 +7,8 @@
 
 window#waybar {
     background: transparent;
-    color: #c0caf5;
+    /* color: #c0caf5; */             /* Catppuccin Text */
+    color: #ebdbb2;                   /* Gruvbox Foreground */
     font-family: 
         SpaceMono Nerd Font,
         feather;
@@ -16,16 +17,17 @@ window#waybar {
 
 .modules-left,
 /*.modules-center,*/
-.modules-right
-{
-    background: rgba(0, 0, 8, .7);
+.modules-right {
+    background: rgba(0, 0, 8, 0.7);
     margin: 2px 10px;
     padding: 0 5px;
     border-radius: 15px;
 }
+
 .modules-left {
     padding: 0;
 }
+
 .modules-center {
     padding: 0 10px;
 }
@@ -70,30 +72,34 @@ window#waybar {
 #power-profiles-daemon:hover,
 #language:hover,
 #mpd:hover {
-    background: rgba(26, 27, 38, 0.9);
+    /* background: rgba(26, 27, 38, 0.9); */   /* Catppuccin Base */
+    background: rgba(29, 32, 33, 0.9);         /* Gruvbox Base (#1d2021) */
 }
 
-
 #workspaces button {
-  background: transparent;
-  font-family:
-    SpaceMono Nerd Font,
-    feather;
-  font-weight: 900;
-  font-size: 13pt;
-  color: #c0caf5;
-  border:none;
-  border-radius: 15px;
+    background: transparent;
+    font-family:
+        SpaceMono Nerd Font,
+        feather;
+    font-weight: 900;
+    font-size: 13pt;
+    /* color: #c0caf5; */                      /* Catppuccin Text */
+    color: #ebdbb2;                            /* Gruvbox Foreground */
+    border: none;
+    border-radius: 15px;
 }
 
 #workspaces button.active {
-    background: #13131d; 
+    /* background: #13131d; */                /* Catppuccin Mantle */
+    background: #1b1b1b;                       /* Gruvbox Custom Mantle */
 }
 
 #workspaces button:hover {
-  background: #11111b;
-  color: #cdd6f4;
-  box-shadow: none;
+    /* background: #11111b; */                /* Catppuccin Crust */
+    background: #181818;                       /* Gruvbox Custom Crust */
+    /* color: #cdd6f4; */                     /* Catppuccin Text */
+    color: #ebdbb2;                            /* Gruvbox Foreground */
+    box-shadow: none;
 }
 
 #custom-arch {
@@ -102,6 +108,8 @@ window#waybar {
     font-size: 18px;
     transition: color .5s;
 }
+
 #custom-arch:hover {
-    color: #1793d1;
+    /* color: #1793d1; */                     /* Catppuccin Blue */
+    color: #458588;                            /* Gruvbox Blue */
 }

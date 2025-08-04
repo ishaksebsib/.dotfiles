@@ -20,7 +20,9 @@ require("vim-options")
 require("lazy").setup("plugins")
 
 -- set theme
-vim.cmd.colorscheme("darkplus")
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd.colorscheme("gruvbox")
+--vim.cmd.colorscheme("darkplus")
 
 -- enable diagnostic signs
 vim.diagnostic.config({

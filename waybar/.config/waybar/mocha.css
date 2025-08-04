@@ -1,3 +1,33 @@
+/* Gruvbox Dark replacements */
+@define-color rosewater #ebdbb2;
+@define-color flamingo  #fb4934;
+@define-color pink      #d3869b;
+@define-color mauve     #b16286;
+@define-color red       #cc241d;
+@define-color maroon    #d79921;
+@define-color peach     #fabd2f;
+@define-color yellow    #d79921;
+@define-color green     #98971a;
+@define-color teal      #8ec07c;
+@define-color sky       #83a598;
+@define-color sapphire  #458588;
+@define-color blue      #83a598;
+@define-color lavender  #a89984;
+@define-color text      #ebdbb2;
+@define-color subtext1  #a89984;
+@define-color subtext0  #928374;
+@define-color overlay2  #7c6f64;
+@define-color overlay1  #665c54;
+@define-color overlay0  #504945;
+@define-color surface2  #3c3836;
+@define-color surface1  #32302f;
+@define-color surface0  #282828;
+@define-color base      #1d2021;
+@define-color mantle    #1b1b1b; /* custom, slightly darker than base */
+@define-color crust     #181818; /* custom, even darker */
+
+/* Catppuccin Mocha colors (commented out) */
+/*
 @define-color rosewater #f5e0dc;
 @define-color flamingo #f2cdcd;
 @define-color pink #f5c2e7;
@@ -24,3 +54,5 @@
 @define-color base #1e1e2e;
 @define-color mantle #181825;
 @define-color crust #11111b;
+*/
+

@@ -49,15 +49,31 @@ style = 'fg:green'
 format = "[ ⌛$duration ]($style)"
 
 
+# Gruvbox palette
 [palettes.custom]
-dark_blue = "#4a88e4"
-blue = "#4a88e4"
-teal = "#23acdd"
-red = "#e25d56"
-orange = '#D08770'
-green = "#1ba63f"
-yellow = "#e9bf57"
-purple = "#915caf"
-gray = '#434C5E'
-black = '#2E3440'
-white = "#f0f0f0"
+dark_blue = "#458588"  # Gruvbox dark blue
+blue = "#83a598"       # Gruvbox blue
+teal = "#8ec07c"        # Gruvbox aqua/teal
+red = "#fb4934"         # Gruvbox red
+orange = "#fe8019"      # Gruvbox orange
+green = "#b8bb26"       # Gruvbox green
+yellow = "#fabd2f"      # Gruvbox yellow
+purple = "#d3869b"      # Gruvbox purple
+gray = "#928374"        # Gruvbox gray
+black = "#282828"       # Gruvbox background
+white = "#ebdbb2"       # Gruvbox light foreground
+
+
+# My custom palette
+#[palettes.custom]
+#dark_blue = "#4a88e4"
+#blue = "#4a88e4"
+#teal = "#23acdd"
+#red = "#e25d56"
+#orange = '#D08770'
+#green = "#1ba63f"
+#yellow = "#e9bf57"
+#purple = "#915caf"
+#gray = '#434C5E'
+#black = '#2E3440'
+#white = "#f0f0f0"

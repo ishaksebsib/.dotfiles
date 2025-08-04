@@ -1,3 +1,5 @@
+general.import = [ "~/.config/alacritty/gruvbox-dark-hard.toml" ]
+
 [window]
 # Set the dimensions of the window, columns and lines can be set to 0 for default
 dimensions = { columns = 0, lines = 0 }
@@ -35,30 +37,3 @@ style = "Italic"
 [font.bold_italic]
 family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
-
-[colors]
-# Colors settings
-[colors.normal]
-green = "#1ba63f"
-red = "#e25d56"
-yellow = "#e9bf57"
-blue = "#4a88e4"
-magenta = "#915caf"
-cyan = "#23acdd"
-white = "#f0f0f0"
-black = "#0E1415"
-
-[colors.primary]
-background = "#0E1415"
-foreground = "#CECECE"
-
-
-[colors.bright]
-green = "#88db3f"
-red = "#f36868"
-yellow = "#f0bf7a"
-blue = "#6f8fdb"
-magenta = "#e987e9"
-cyan = "#4ac9e2"
-white = "#FFFFFF"
-black = "#777777"
