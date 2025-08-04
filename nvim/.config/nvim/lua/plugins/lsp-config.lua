@@ -17,11 +17,19 @@ local servers = {
 	jsonls = {},
 	ts_ls = {},
 	pyright = {},
-	rust_analyzer = {},
 	tailwindcss = {},
 	--eslint = {},
 	svelte = {},
 	elmls = {},
+	rust_analyzer = {
+		settings = {
+			["rust-analyzer"] = {
+				cargo = {
+					allFeatures = true,
+				},
+			},
+		},
+	},
 	lua_ls = {
 		settings = {
 			Lua = {
