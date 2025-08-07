@@ -81,6 +81,4 @@ nodejs
 npm
 typescript
 prettierd
-cargo
-rust-analyzer
 readline
