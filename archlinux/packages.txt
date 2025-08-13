@@ -27,7 +27,6 @@ stow
 neofetch
 less
 lazygit
-yazi
 ripgrep
 xclip
 tlp
