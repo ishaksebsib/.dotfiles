@@ -60,6 +60,7 @@ cheese
 en-croissant
 
 # dev
+github-cli
 neovim
 helix
 #evil-helix-bin
