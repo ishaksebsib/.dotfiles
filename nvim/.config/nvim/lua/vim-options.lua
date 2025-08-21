@@ -24,14 +24,6 @@ vim.cmd("set tabstop=2") -- Number of spaces that a <Tab> in the file counts for
 vim.cmd("set softtabstop=2") -- Number of spaces to use when editing
 vim.cmd("set shiftwidth=2") -- Number of spaces used for autoindent
 
--- set metta files as scheme
-vim.filetype.add({
-  extension = {
-    metta = "scheme",
-  },
-})
-
-
 -- REMAPS
 
 -- move half page and make it center
