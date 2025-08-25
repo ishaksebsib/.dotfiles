@@ -34,3 +34,15 @@ vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz<CR>', { noremap = true, silent = 
 -- move to the right and left windows
 vim.keymap.set("n", "gl", "<C-w>l", { desc = "Window: Move right" })
 vim.keymap.set("n", "gh", "<C-w>h", { desc = "Window: Move left" })
+
+-- copy relative file path
+vim.keymap.set('n', '<leader>y', function()
+  local relative_path = vim.fn.fnamemodify(vim.fn.expand('%:p'), ':.')
+  vim.fn.setreg('+', relative_path)
+end, { noremap = true, silent = true })
+
+
+-- copy absolute file path
+vim.keymap.set('n', '<leader>Y', function()
+  vim.fn.setreg('+', vim.fn.expand('%:p'))
+end, { noremap = true, silent = true })
