@@ -19,6 +19,7 @@ zram-generator
 # cli tools
 base-devel
 git
+git-delta
 alacritty
 fzf
 fish
