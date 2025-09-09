@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- load setups
 require("vim-options")
+require("terminal")
 require("lazy").setup("plugins")
 
 -- set theme
