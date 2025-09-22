@@ -8,6 +8,9 @@ end
 # setup cargo
 set -gx PATH $PATH $HOME/.cargo/bin
 
+# setup bun
+set -gx PATH $PATH $HOME/.bun/bin
+
 # setup go
 set -gx PATH $PATH (go env GOPATH)/bin
 
