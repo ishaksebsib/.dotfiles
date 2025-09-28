@@ -41,7 +41,6 @@ zoxide
 
 # apps
 cursor-bin
-kanata
 google-chrome
 obsidian
 vlc
