@@ -21,7 +21,7 @@ return {
 	end,
 
 	-- Cycle and delete buffers
-	vim.keymap.set("n", "<leader>n", "<CMD>bnext<CR>", { desc = "Next buffer" }),
-	vim.keymap.set("n", "<leader>p", "<CMD>bprevious<CR>", { desc = "Previous buffer" }),
+	vim.keymap.set("n", "L", "<CMD>bnext<CR>", { desc = "Next buffer" }),
+	vim.keymap.set("n", "H", "<CMD>bprevious<CR>", { desc = "Previous buffer" }),
 	vim.keymap.set("n", "<leader>w", "<CMD>bdelete<CR>", { desc = "Delete buffer" }),
 }
