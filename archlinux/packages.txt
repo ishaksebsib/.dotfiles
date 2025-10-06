@@ -65,7 +65,6 @@ neovim
 helix
 #evil-helix-bin
 docker
-docker-compose
 cloc
 # insomnia
 
