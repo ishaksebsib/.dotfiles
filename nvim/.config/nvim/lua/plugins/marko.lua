@@ -1,28 +1,12 @@
 return {
-	"developedbyed/marko.nvim",
+	"mohseenrm/marko.nvim",
 	config = function()
-		require("marko").setup({
-			width = 100,
-			height = 100,
-			border = "rounded",
-			title = " Marks ",
-
-			-- Navigation mode: "popup" (default) or "direct" (jump directly to marks)
-			navigation_mode = "popup",
-
-			-- Default keymap to open popup (set to false to disable)
-			default_keymap = false,
-
-			-- Virtual text configuration
-			virtual_text = {
-				enabled = false,
-			},
-		})
+		require("marko").setup()
 	end,
 
-	vim.keymap.set("n", "<leader><leader>", function()
-		require("marko").toggle_marks()
-	end, { desc = "Show marks popup" }),
+	--vim.keymap.set("n", "<leader><leader>", function()
+		--require("marko").toggle_marks()
+	--end, { desc = "Show marks popup" }),
 
 	-- REVERSE the default go to marks
 	--
