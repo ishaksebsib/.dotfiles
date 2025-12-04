@@ -62,6 +62,7 @@ cheese
 en-croissant
 
 # dev
+ttf-cascadia-code-nerd
 github-cli
 neovim
 helix
