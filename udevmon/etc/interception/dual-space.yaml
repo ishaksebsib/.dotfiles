@@ -1,0 +1,7 @@
+TIMING:
+  TAP_MILLISEC: 200
+
+MAPPINGS:
+  - KEY: KEY_SPACE
+    TAP: KEY_SPACE
+    HOLD: KEY_LEFTMETA # when space key is holded, it acts like windows key

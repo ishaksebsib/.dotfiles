@@ -25,13 +25,6 @@
 command = /usr/bin/fish
 
 ###############################################################################
-# Keybind
-###############################################################################
-
-# keybind: Ctrl+Return opens a new Ghostty window
-keybind = ctrl+enter=new_window
-
-###############################################################################
 # Window
 ###############################################################################
 
@@ -49,7 +42,7 @@ background-opacity = 0.9
 ###############################################################################
 
 working-directory = home
-window-inherit-working-directory = false
+window-inherit-working-directory = true
 resize-overlay = never
 confirm-close-surface = false
 

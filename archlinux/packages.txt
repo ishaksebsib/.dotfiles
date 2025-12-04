@@ -85,3 +85,15 @@ npm
 typescript
 prettierd
 readline
+
+# key board remappings
+
+## install
+
+interception-tools
+interception-dual-function-keys
+
+# enbable udevmon
+
+# sudo systemctl enable --now udevmon
+# sudo systemctl restart udevmon
