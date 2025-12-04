@@ -21,8 +21,10 @@ base-devel
 git
 git-delta
 alacritty
+ghostty
 fzf
 fish
+fisher
 starship
 stow
 neofetch
