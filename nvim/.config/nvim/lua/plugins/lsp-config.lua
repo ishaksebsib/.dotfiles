@@ -97,6 +97,12 @@ return {
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
 			vim.keymap.set("n", "<leader>td", vim.lsp.buf.type_definition, { desc = "Type definition" })
+			vim.keymap.set(
+				"n",
+				"gf",
+				[[:lua require("telescope.builtin").diagnostics()<CR>]],
+				{ noremap = true, silent = true, desc = "Open diagnostics in telescope" }
+			)
 
 			-- leader g fammily maps
 
