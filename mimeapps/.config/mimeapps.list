@@ -1,5 +1,6 @@
 [Default Applications]
 text/html=helium.desktop
+text/markdown=org.pwmt.zathura.desktop
 x-scheme-handler/http=helium.desktop
 x-scheme-handler/https=helium.desktop
 x-scheme-handler/about=helium.desktop
@@ -10,6 +11,14 @@ application/epub+zip=org.pwmt.zathura.desktop
 text/plain=nvim.desktop
 x-terminal-emulator=alacritty.desktop
 inode/directory=org.gnome.Nautilus.desktop
+x-scheme-handler/chrome=zen.desktop
+application/x-extension-htm=helium.desktop
+application/x-extension-html=helium.desktop
+application/x-extension-shtml=helium.desktop
+application/xhtml+xml=helium.desktop
+application/x-extension-xhtml=helium.desktop
+application/x-extension-xht=helium.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura.desktop
+text/markdown=org.pwmt.zathura.desktop;
