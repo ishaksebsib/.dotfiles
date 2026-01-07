@@ -103,15 +103,14 @@ return {
 				[[:lua require("telescope.builtin").diagnostics()<CR>]],
 				{ noremap = true, silent = true, desc = "Open diagnostics in telescope" }
 			)
-
-			-- leader g fammily maps
-
 			vim.keymap.set(
 				{ "n", "v" },
-				"<leader>gca",
+				"ga",
 				vim.lsp.buf.code_action,
 				{ noremap = true, desc = "Code Actions" }
 			)
+
+			-- leader g fammily maps
 
 			vim.keymap.set(
 				{ "n", "v" },
