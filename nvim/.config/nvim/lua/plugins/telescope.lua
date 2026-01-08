@@ -7,10 +7,10 @@ return {
 		config = function()
 			local builtin = require("telescope.builtin") -- save all telescope built-in functionality to a variables
 			--vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "find files" })
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "live grep" })
-			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "select currently open files" })
-			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "help_tags" })
-			vim.keymap.set("n", "<leader>ft", "<CMD>TodoTelescope<CR>", { desc = "find todos" })
+			vim.keymap.set("n", "<leader>/", builtin.live_grep, { desc = "live grep" })
+			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "select currently open files" })
+			--vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "help_tags" })
+			vim.keymap.set("n", "<leader>td", "<CMD>TodoTelescope<CR>", { desc = "find todos" })
 			vim.keymap.set("n", "<leader>th", builtin.colorscheme, { desc = "select themes" })
 
 			-- LSP

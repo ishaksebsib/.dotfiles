@@ -90,45 +90,48 @@ return {
 				vim.lsp.enable(server)
 			end
 
+			local builtin = require("telescope.builtin")
+
 			-- setup lsp for all language servers
 			-- See `:help vim.lsp.*` for documentation on any of the below functions
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
-			vim.keymap.set("n", "<leader>td", vim.lsp.buf.type_definition, { desc = "Type definition" })
+			--vim.keymap.set("n", "<leader>td", vim.lsp.buf.type_definition, { desc = "Type definition" })
+			vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "Telescope: Git Status" })
+
 			vim.keymap.set(
 				"n",
-				"gf",
-				[[:lua require("telescope.builtin").diagnostics()<CR>]],
+				"<leader>d",
+				builtin.diagnostics,
 				{ noremap = true, silent = true, desc = "Open diagnostics in telescope" }
 			)
+
 			vim.keymap.set(
 				{ "n", "v" },
-				"ga",
+				"<leader>a",
 				vim.lsp.buf.code_action,
 				{ noremap = true, desc = "Code Actions" }
 			)
 
-			-- leader g fammily maps
-
 			vim.keymap.set(
 				{ "n", "v" },
-				"<leader>gn",
+				"<leader>r",
 				vim.lsp.buf.rename,
 				{ noremap = true, desc = "Rename All Same Variables" }
 			)
 
 			vim.keymap.set(
 				"n",
-				"<leader>ge",
+				"<leader>gd",
 				vim.diagnostic.open_float,
 				{ noremap = true, silent = true, desc = "Show current Error in float" }
 			)
 
 			vim.keymap.set(
 				"n",
-				"<leader>gE",
+				"yd",
 				[[:lua YankDiagnosticError()<CR>]],
 				{ noremap = true, silent = true, desc = "Copy error" }
 			)
