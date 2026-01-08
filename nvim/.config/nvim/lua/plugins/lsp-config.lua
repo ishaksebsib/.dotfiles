@@ -19,13 +19,17 @@ local servers = {
 	pyright = {},
 	tailwindcss = {},
 	--eslint = {},
-	svelte = {},
-	elmls = {},
+	--svelte = {},
+	--elmls = {},
 	rust_analyzer = {
 		settings = {
 			["rust-analyzer"] = {
+				cmd = { "rustup", "run", "stable", "rust-analyzer" },
 				cargo = {
 					allFeatures = true,
+				},
+				procMacro = {
+					enable = true,
 				},
 			},
 		},
