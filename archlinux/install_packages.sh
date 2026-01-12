@@ -19,6 +19,6 @@ while IFS= read -r package || [[ -n "$package" ]]; do
         echo "Package '$package' is already installed."
     else
         echo "Installing package '$package'..."
-        paru -S --noconfirm "$package"
+        paru -S --needed --noconfirm "$package"
     fi
 done < "$PACKAGE_FILE"
