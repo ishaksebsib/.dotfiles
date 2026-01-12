@@ -87,6 +87,18 @@ typescript
 prettierd
 readline
 
+# tauri requirements
+webkit2gtk-4.1
+base-devel
+curl
+wget
+file
+openssl
+appmenu-gtk-module
+libappindicator-gtk3
+librsvg
+xdotool
+
 # key board remappings
 
 ## install
