@@ -8,6 +8,7 @@ return {
 		"3rd/image.nvim",        -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	config = function()
-		vim.keymap.set("n", "<leader>e", "<CMD>Neotree float toggle<CR>", {})
+		vim.keymap.set("n", "<leader>e", "<CMD>Neotree float toggle<CR>", { desc = "Neotree toggle" })
+		vim.keymap.set("n", "<leader>E", "<CMD>Neotree reveal<CR>", { desc = "Neotree toggle from current buffer" })
 	end,
 }
