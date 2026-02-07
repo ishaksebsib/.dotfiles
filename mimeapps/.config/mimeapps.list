@@ -18,6 +18,7 @@ application/x-extension-shtml=helium.desktop
 application/xhtml+xml=helium.desktop
 application/x-extension-xhtml=helium.desktop
 application/x-extension-xht=helium.desktop
+x-scheme-handler/opencode=opencode-desktop-handler.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura.desktop
