@@ -21,6 +21,7 @@ zram-generator
 
 # cli tools
 base-devel
+brightnessctl
 git
 git-delta
 jujutsu
