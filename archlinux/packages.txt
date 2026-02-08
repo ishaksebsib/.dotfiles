@@ -7,6 +7,9 @@ wget
 ufw
 dkms
 
+#theme
+gtk-engine-murrine
+
 # optimzation
 
 # sudo systemctl enable auto-cpufreq.service
@@ -28,7 +31,7 @@ fish
 fisher
 starship
 stow
-neofetch
+#neofetch
 less
 lazygit
 ripgrep
@@ -69,7 +72,7 @@ neovim
 helix
 #evil-helix-bin
 docker
-docker-compose
+#docker-compose
 cloc
 # insomnia
 
