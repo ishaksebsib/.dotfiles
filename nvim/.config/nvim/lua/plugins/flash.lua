@@ -3,13 +3,7 @@ return {
 	event = "VeryLazy",
 
 	---@type Flash.Config
-	opts = {
-		modes = {
-			search = {
-				enabled = true,
-			},
-		},
-	},
+	opts = {},
 	keys = {
 		{
 			"s",
