@@ -7,9 +7,6 @@ wget
 ufw
 dkms
 
-#theme
-gtk-engine-murrine
-
 # optimzation
 
 # sudo systemctl enable auto-cpufreq.service
@@ -22,6 +19,9 @@ zram-generator
 # cli tools
 base-devel
 brightnessctl
+bluez
+bluez-utils
+blueman
 git
 git-delta
 jujutsu
@@ -47,6 +47,7 @@ opencode-bin
 zoxide
 
 # apps
+antigravity
 cursor-bin
 google-chrome
 obsidian
@@ -63,7 +64,7 @@ gnome-system-monitor
 postman
 rustdesk-bin
 proton-vpn-gtk-app
-cheese
+#cheese
 en-croissant
 
 # dev
