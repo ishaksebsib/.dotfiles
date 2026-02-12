@@ -11,6 +11,7 @@ return {
 	opts = {
 		-- pass here all the options
 	},
+	lazy = false,
 	keys = {
 		{
 			"<leader>f",
