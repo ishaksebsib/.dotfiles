@@ -93,6 +93,14 @@ typescript
 prettierd
 readline
 
+# fonts
+noto-fonts
+noto-fonts-emoji
+noto-fonts-extra
+otf-font-awesome
+ttf-cascadia-code-nerd
+ttf-jetbrains-mono-nerd
+
 # tauri requirements
 webkit2gtk-4.1
 base-devel
