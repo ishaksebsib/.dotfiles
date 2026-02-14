@@ -45,9 +45,11 @@ unzip
 uv
 opencode-bin
 zoxide
+handy
+# dep for handy
+wtype
 
 # apps
-appimagelauncher
 antigravity
 cursor-bin
 google-chrome
