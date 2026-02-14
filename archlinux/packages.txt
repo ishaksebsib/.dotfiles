@@ -47,6 +47,7 @@ opencode-bin
 zoxide
 
 # apps
+appimagelauncher
 antigravity
 cursor-bin
 google-chrome
