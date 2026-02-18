@@ -20,5 +20,23 @@ return {
 			end,
 			desc = "Open file picker",
 		},
+		{
+			"<leader>/",
+			function()
+				require("fff").live_grep({
+					grep = {
+						modes = { "fuzzy", "plain" },
+					},
+				})
+			end,
+			desc = "Live fffuzy grep",
+		},
+		--{
+		--"<leader>/",
+		--function()
+		--require("fff").live_grep()
+		--end,
+		--desc = "LiFFFe grep",
+		--},
 	},
 }

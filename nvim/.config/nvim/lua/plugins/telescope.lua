@@ -7,7 +7,7 @@ return {
 		config = function()
 			local builtin = require("telescope.builtin") -- save all telescope built-in functionality to a variables
 			--vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "find files" })
-			vim.keymap.set("n", "<leader>/", builtin.live_grep, { desc = "live grep" })
+			--vim.keymap.set("n", "<leader>/", builtin.live_grep, { desc = "live grep" })
 			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "select currently open files" })
 			--vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "help_tags" })
 			vim.keymap.set("n", "<leader>td", "<CMD>TodoTelescope<CR>", { desc = "find todos" })
@@ -15,7 +15,7 @@ return {
 
 			-- LSP
 			-- DOC https://github.com/nvim-telescope/telescope.nvim#neovim-lsp-pickers
-			vim.keymap.set('n', 'gr', builtin.lsp_references, {desc = "Find references"})
+			vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Find references" })
 		end,
 	},
 	{
