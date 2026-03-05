@@ -55,6 +55,7 @@ cursor-bin
 google-chrome
 obsidian
 vlc
+vlc-plugins-all
 telegram-desktop
 uget
 transmission-gtk
