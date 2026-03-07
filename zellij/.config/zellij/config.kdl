@@ -282,7 +282,7 @@ load_plugins {
 //   - true (default)
 //   - false
 //
-// auto_layout true
+auto_layout false
 
 // Whether sessions should be serialized to the cache folder (including their tabs/panes, cwds and running commands) so that they can later be resurrected
 // (Requires restart)
