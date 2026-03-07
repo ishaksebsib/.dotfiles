@@ -45,6 +45,7 @@ unzip
 uv
 opencode-bin
 zoxide
+zellij
 handy
 # dep for handy
 wtype
