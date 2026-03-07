@@ -336,7 +336,7 @@ load_plugins {
 // Default: "default"
 // (Requires restart)
 //
-// default_layout "compact"
+//default_layout "default"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -402,7 +402,7 @@ load_plugins {
 // The folder in which Zellij will look for layouts
 // (Requires restart)
 //
-// layout_dir "/path/to/my/layout_dir"
+layout_dir "/home/pro/.config/zellij/layouts"
 
 // The folder in which Zellij will look for themes
 // (Requires restart)
