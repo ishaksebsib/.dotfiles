@@ -3,19 +3,18 @@ layout {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
-        children
+				pane name="-"
     }
     tab_template name="stacked" {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
         pane split_direction="vertical" {
-            pane
+            pane name="-"
             pane stacked=true {
-                pane
-                pane
-                pane
-                pane
+                pane name="-"
+                pane name="-"
+                pane name="-"
             }
         }
     }
@@ -24,15 +23,15 @@ layout {
             plugin location="zellij:tab-bar"
         }
         pane split_direction="vertical" {
-            pane
-            pane
+            pane name="-"
+            pane name="-"
         }
     }
     tab_template name="single" {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
-        pane
+        pane name="-"
     }
     stacked
     horizontal
