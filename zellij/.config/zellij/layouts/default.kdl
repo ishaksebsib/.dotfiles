@@ -18,22 +18,12 @@ layout {
             }
         }
     }
-    tab_template name="horizontal" {
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-        }
-        pane split_direction="vertical" {
-            pane name="-"
-            pane name="-"
-        }
-    }
     tab_template name="single" {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
-        pane name="-"
+        pane name="lazygit" command="lazygit"
     }
     stacked
-    horizontal
     single
 }
