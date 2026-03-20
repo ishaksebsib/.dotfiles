@@ -24,6 +24,7 @@ bluez-utils
 blueman
 git
 git-delta
+just
 jujutsu
 alacritty
 ghostty
