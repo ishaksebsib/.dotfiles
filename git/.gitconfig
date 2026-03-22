@@ -1,0 +1,33 @@
+[gpg]
+	format = ssh
+
+[commit]
+	gpgSign = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[core]
+	editor = nvim
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	side-by-side = true
+	line-numbers = true
+	navigate = true  # use n and N to move between diff sections
+	dark = true      # or light = true, or omit for auto-detection
+
+[merge]
+	conflictStyle = zdiff3
+[push]
+	default = current
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
