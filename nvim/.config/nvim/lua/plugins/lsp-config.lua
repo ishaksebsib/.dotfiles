@@ -108,8 +108,15 @@ return {
 			vim.keymap.set(
 				"n",
 				"<leader>d",
+				vim.diagnostic.open_float,
+				{ noremap = true, silent = true, desc = "Show current diagnostic in float" }
+			)
+
+			vim.keymap.set(
+				"n",
+				"<leader>gd",
 				builtin.diagnostics,
-				{ noremap = true, silent = true, desc = "Open diagnostics in telescope" }
+				{ noremap = true, silent = true, desc = "Open all diagnostics in telescope" }
 			)
 
 			vim.keymap.set(
@@ -124,13 +131,6 @@ return {
 				"<leader>r",
 				vim.lsp.buf.rename,
 				{ noremap = true, desc = "Rename All Same Variables" }
-			)
-
-			vim.keymap.set(
-				"n",
-				"<leader>gd",
-				vim.diagnostic.open_float,
-				{ noremap = true, silent = true, desc = "Show current Error in float" }
 			)
 
 			vim.keymap.set(
