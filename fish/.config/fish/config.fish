@@ -14,6 +14,9 @@ set -gx PATH $PATH $HOME/.bun/bin
 # setup go
 set -gx PATH $PATH (go env GOPATH)/bin
 
+# setup node
+set --universal nvm_default_version lts
+
 # setup pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
