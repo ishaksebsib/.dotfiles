@@ -93,8 +93,9 @@ sassc
 protobuf
 python-pip
 ipython
-nodejs
-npm
+// use nvm for node/npm
+//nodejs
+//npm
 typescript
 prettierd
 readline
