@@ -18,6 +18,7 @@ local servers = {
 	ts_ls = {},
 	pyright = {},
 	tailwindcss = {},
+	oxfmt = {},
 	--eslint = {},
 	--svelte = {},
 	--elmls = {},
@@ -49,7 +50,7 @@ local servers = {
 }
 
 local formatters = {
-	biome = {},
+	--biome = {},
 	stylua = {},
 	black = {},
 }
