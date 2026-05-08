@@ -48,6 +48,7 @@ local servers = {
 local formatters = {
 	--biome = {},
 	oxfmt = {},
+	isort = {},
 	stylua = {},
 	black = {},
 }
