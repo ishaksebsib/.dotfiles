@@ -18,10 +18,6 @@ local servers = {
 	ts_ls = {},
 	pyright = {},
 	tailwindcss = {},
-	oxfmt = {},
-	--eslint = {},
-	--svelte = {},
-	--elmls = {},
 	rust_analyzer = {
 		settings = {
 			["rust-analyzer"] = {
@@ -51,6 +47,7 @@ local servers = {
 
 local formatters = {
 	--biome = {},
+	oxfmt = {},
 	stylua = {},
 	black = {},
 }
