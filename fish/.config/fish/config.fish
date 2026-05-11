@@ -5,6 +5,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+# set local bin path
+set -gx PATH $PATH $HOME/.local/bin
+
 # setup cargo
 set -gx PATH $PATH $HOME/.cargo/bin
 
