@@ -53,7 +53,7 @@ wtype
 
 # apps
 antigravity
-cursor-bin
+# cursor-bin
 google-chrome
 obsidian
 vlc
@@ -96,6 +96,7 @@ ipython
 // use nvm for node/npm
 //nodejs
 //npm
+yarn
 typescript
 prettierd
 readline
