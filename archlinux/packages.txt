@@ -46,8 +46,8 @@ unzip
 uv
 opencode-bin
 zoxide
-zellij
-handy
+# zellij
+# handy
 # dep for handy
 wtype
 
@@ -71,7 +71,7 @@ postman
 rustdesk-bin
 proton-vpn-gtk-app
 #cheese
-en-croissant
+#en-croissant #local chess app
 
 # dev
 ttf-cascadia-code-nerd
