@@ -91,6 +91,10 @@ case "$1" in
     cp "$SRC" "$DEST" || exit 1
     chmod +x "$DEST" || exit 1
 
+    # Symlink into ~/.local/bin for terminal launch
+    mkdir -p "$HOME/.local/bin"
+    ln -sf "$DEST" "$HOME/.local/bin/$APPNAME"
+
     # Extract desktop + icon from inside the AppImage
     cd /tmp && rm -rf squashfs-root
     "$DEST" --appimage-extract '*.desktop' 2>/dev/null
@@ -148,7 +152,8 @@ EOF
   remove)
     APPNAME="$2"
     remove_appimage_files "$APPNAME"
-    rm -f "$DESK/$APPNAME.desktop" \
+    rm -f "$HOME/.local/bin/$APPNAME" \
+          "$DESK/$APPNAME.desktop" \
           "$ICONS/$APPNAME.png"
     update-desktop-database "$DESK"
     echo "🗑️  Removed: $APPNAME"
