@@ -89,6 +89,7 @@ cloc
 gcc
 go
 lua
+ruby
 sassc
 protobuf
 python-pip
