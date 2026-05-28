@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     antigravity
-    windsurf
     obsidian
     telegram-desktop
     uget
