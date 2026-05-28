@@ -68,7 +68,7 @@ zathura-pdf-mupdf
 #evince
 gnome-system-monitor
 postman
-rustdesk-bin
+#rustdesk-bin
 proton-vpn-gtk-app
 #cheese
 #en-croissant #local chess app

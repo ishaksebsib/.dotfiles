@@ -1,4 +1,7 @@
 { ... }:
 {
-  imports = [ ./cli.nix ];
+  imports = [
+    ./apps.nix
+    ./cli.nix
+  ];
 }
