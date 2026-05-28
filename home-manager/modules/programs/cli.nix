@@ -12,6 +12,7 @@
     brightnessctl
     bluez
     blueman
+    cloc
     just
     stow
     less
