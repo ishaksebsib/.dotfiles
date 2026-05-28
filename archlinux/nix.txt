@@ -39,7 +39,6 @@ google-chrome
 # apps
 vlc
 vlc-plugins-all
-nautilus
 zathura
 zathura-pdf-mupdf
 gnome-system-monitor
@@ -52,7 +51,6 @@ github-cli
 neovim
 docker
 docker-compose
-# insomnia
 
 
 # languages
