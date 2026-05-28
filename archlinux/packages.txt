@@ -70,7 +70,6 @@ proton-vpn-gtk-app
 #en-croissant #local chess app
 
 # dev
-ttf-cascadia-code-nerd
 github-cli
 neovim
 helix
@@ -99,12 +98,9 @@ prettierd
 readline
 
 # fonts
-noto-fonts
-noto-fonts-emoji
-noto-fonts-extra
 otf-font-awesome
-ttf-cascadia-code-nerd
 ttf-jetbrains-mono-nerd
+ttf-cascadia-code-nerd
 
 # key board remappings
 

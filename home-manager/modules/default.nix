@@ -1,4 +1,7 @@
 { ... }:
 {
-  imports = [ ./programs ];
+  imports = [
+    ./programs
+		./fonts.nix
+  ];
 }
