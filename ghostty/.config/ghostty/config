@@ -35,7 +35,8 @@ window-padding-balance = true
 window-decoration = none
 
 # Background opacity (0–1).
-background-opacity = 0.9
+#background-opacity = 0.9
+background-opacity = 1
 
 ###############################################################################
 # Custom settings
