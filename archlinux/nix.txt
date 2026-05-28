@@ -61,6 +61,3 @@ interception-dual-function-keys
 
 # sudo systemctl enable --now udevmon
 # sudo systemctl restart udevmon
-
-## theme
-## git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme.git && cd Gruvbox-GTK-Theme && && cd themes && ./install.sh

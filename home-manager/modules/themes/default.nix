@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./programs
-    ./themes
+    ./fonts.nix
+    ./gtk.nix
   ];
 }
