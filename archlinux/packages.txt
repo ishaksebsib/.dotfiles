@@ -12,10 +12,6 @@ dkms
 # sudo systemctl enable auto-cpufreq.service
 auto-cpufreq
 
-# sudo systemctl daemon-reexec
-# sudo systemctl start systemd-zram-setup@zram0.service
-zram-generator
-
 # cli tools
 base-devel
 brightnessctl
@@ -109,18 +105,6 @@ noto-fonts-extra
 otf-font-awesome
 ttf-cascadia-code-nerd
 ttf-jetbrains-mono-nerd
-
-# tauri requirements
-webkit2gtk-4.1
-base-devel
-curl
-wget
-file
-openssl
-appmenu-gtk-module
-libappindicator-gtk3
-librsvg
-xdotool
 
 # key board remappings
 

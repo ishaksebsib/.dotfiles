@@ -7,6 +7,7 @@
 
     # Power Management
     tlp
+    auto-cpufreq
 
     # cli tools
     brightnessctl
