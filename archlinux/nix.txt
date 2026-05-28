@@ -37,18 +37,9 @@ postman
 proton-vpn-gtk-app
 
 # dev
-github-cli
 neovim
 docker
 docker-compose
-
-
-# languages
-gcc
-lua
-protobuf
-readline
-
 
 # key board remappings
 
