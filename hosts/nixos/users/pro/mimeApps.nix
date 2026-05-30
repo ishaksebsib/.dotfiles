@@ -12,7 +12,7 @@
     "x-scheme-handler/postman" = "Postman.desktop";
     "application/epub+zip" = "org.pwmt.zathura.desktop";
     "text/plain" = "nvim.desktop";
-    "x-terminal-emulator" = "alacritty.desktop";
+    "x-terminal-emulator" = "ghostty.desktop";
     "inode/directory" = "org.gnome.Nautilus.desktop";
     "application/x-extension-htm" = "google-chrome.desktop";
     "application/x-extension-html" = "google-chrome.desktop";

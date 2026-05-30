@@ -8,8 +8,6 @@ in
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  services.printing.enable = true;
-
   services.interception-tools = {
     enable = true;
     plugins = [ pkgs.interception-tools-plugins.dual-function-keys ];

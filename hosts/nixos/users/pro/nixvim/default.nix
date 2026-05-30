@@ -26,8 +26,4 @@
   ];
 
   plugins."web-devicons".enable = true;
-
-  extraPlugins = [
-    (pkgs.vimPlugins."vim-nix" or pkgs.vimPlugins.vim-nix)
-  ];
 }

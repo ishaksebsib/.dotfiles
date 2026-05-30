@@ -9,7 +9,7 @@
     vlc
     mission-center
     postman
-    protonvpn-gui
+    proton-vpn
   ];
 
   programs.zathura = {

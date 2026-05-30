@@ -5,7 +5,6 @@
     uv
     gcc
     lua
-    sassc
     nodejs
     typescript
 
