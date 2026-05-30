@@ -20,4 +20,6 @@
       "selection-clipboard" = "clipboard";
     };
   };
+
+  services.network-manager-applet.enable = true;
 }

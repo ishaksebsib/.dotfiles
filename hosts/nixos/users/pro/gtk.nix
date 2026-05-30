@@ -6,7 +6,7 @@
     cursorTheme = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
-      size = 28;
+      size = 24;
     };
 
     theme = {
@@ -47,7 +47,7 @@
   home.pointerCursor = {
     name = "Bibata-Modern-Classic";
     package = pkgs.bibata-cursors;
-    size = 28;
+    size = 24;
   };
 
   dconf.settings = {
