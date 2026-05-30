@@ -11,6 +11,8 @@
     ./desktop.nix
     ./services.nix
     ./packages.nix
+    ./fonts.nix
+    ./home-manager.nix
   ];
 
   system.stateVersion = "25.11";

@@ -1,8 +1,17 @@
 { pkgs, inputs, ... }:
 {
-  home.stateVersion = "25.11";
-
-  home.packages = with pkgs; [
-    kdePackages.kate
+  imports = [
+    ./git.nix
+    ./gh.nix
+    ./apps.nix
+    ./cli.nix
+    ./languages.nix
+    ./gtk.nix
   ];
+
+  programs.home-manager.enable = true;
+
+  systemd.user.startServices = "sd-switch";
+  
+  home.stateVersion = "26.05";
 }

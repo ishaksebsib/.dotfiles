@@ -6,6 +6,14 @@
     neovim
     vscode
     git
+
+    # System tools
+    curl
     wget
+    tlp
+    auto-cpufreq
+    brightnessctl
+    bluez
+    blueman
   ];
 }
