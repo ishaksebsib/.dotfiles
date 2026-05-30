@@ -8,5 +8,11 @@
     sassc
     nodejs
     typescript
+
+    # Formatters (used by conform.nvim)
+    stylua
+    black
+    isort
+    oxlint
   ];
 }
