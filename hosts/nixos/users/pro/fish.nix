@@ -8,6 +8,7 @@
       lg = "lazygit";
       nv = "nvim";
       rb = "sudo nixos-rebuild switch --flake $HOME/.dotfiles";
+      ns = "nix develop --command fish";
     };
 
     interactiveShellInit = ''
