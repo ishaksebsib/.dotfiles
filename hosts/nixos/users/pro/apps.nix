@@ -10,6 +10,7 @@
     mission-center
     postman
     proton-vpn
+    networkmanagerapplet
   ];
 
   programs.zathura = {
