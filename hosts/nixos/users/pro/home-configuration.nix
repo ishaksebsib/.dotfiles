@@ -4,6 +4,7 @@
     ./git.nix
     ./gh.nix
     ./apps.nix
+    ./handy.nix
     ./cli.nix
     ./languages.nix
     ./gtk.nix
