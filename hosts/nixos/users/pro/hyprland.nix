@@ -12,6 +12,6 @@
     '')
   ];
 
-  home.file.".config/hypr".source    = ../../../../bare/hypr;
-  home.file.".config/imgs".source    = ../../../../assets;
+  home.file.".config/hypr".source = ../../../../bare/hypr;
+  home.file.".config/imgs".source = ../../../../assets;
 }

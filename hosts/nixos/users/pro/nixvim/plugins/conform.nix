@@ -9,7 +9,10 @@
         json = [ "oxfmt" ];
         jsonc = [ "oxfmt" ];
         lua = [ "stylua" ];
-        python = [ "isort" "black" ];
+        python = [
+          "isort"
+          "black"
+        ];
         typescript = [ "oxfmt" ];
         typescriptreact = [ "oxfmt" ];
       };

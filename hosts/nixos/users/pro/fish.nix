@@ -4,7 +4,7 @@
     enable = true;
     shellAliases = {
       gs = "git status --short";
-      j  = "just";
+      j = "just";
       lg = "lazygit";
       nv = "nvim";
       rb = "sudo nixos-rebuild switch --flake $HOME/.dotfiles";
@@ -27,7 +27,6 @@
 
   programs.fzf.enable = true;
   programs.fzf.enableFishIntegration = true;
-
 
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;

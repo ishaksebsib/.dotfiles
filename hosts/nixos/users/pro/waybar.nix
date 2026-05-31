@@ -9,7 +9,10 @@
       height = 20;
       spacing = 2;
 
-      modules-left = [ "custom/arch" "hyprland/workspaces" ];
+      modules-left = [
+        "custom/arch"
+        "hyprland/workspaces"
+      ];
       modules-right = [
         "tray"
         "pulseaudio"
@@ -53,7 +56,11 @@
           phone = "";
           portable = "";
           car = "";
-          default = [ "" "" "" ];
+          default = [
+            ""
+            ""
+            ""
+          ];
         };
         "on-click" = "pavucontrol";
       };
@@ -87,7 +94,13 @@
         "format-charging" = "  {capacity}%";
         "format-plugged" = "  {capacity}%";
         "format-alt" = "{time}  {icon}";
-        "format-icons" = [ "" "" "" "" "" ];
+        "format-icons" = [
+          ""
+          ""
+          ""
+          ""
+          ""
+        ];
       };
 
       "battery#bat2" = {
