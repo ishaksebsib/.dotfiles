@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     go
-    uv
     gcc
     lua
     nodejs

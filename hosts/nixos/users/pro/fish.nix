@@ -14,10 +14,6 @@
       set --global fish_color_command green
 
       bind \e accept-autosuggestion
-
-      if test -f ~/.config/fish/.secrets.fish
-          source ~/.config/fish/.secrets.fish
-      end
     '';
 
     functions = {

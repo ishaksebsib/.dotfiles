@@ -55,16 +55,4 @@
       color-scheme = "prefer-dark";
     };
   };
-
-  xdg.configFile."gtk-3.0/bookmarks".text = ''
-    file:///home/pro/Development Development
-    file:///home/pro/Downloads Downloads
-    file:///home/pro/Documents Documents
-  '';
-
-  xdg.configFile."gtk-4.0/bookmarks".text = ''
-    file:///home/pro/Development Development
-    file:///home/pro/Downloads Downloads
-    file:///home/pro/Documents Documents
-  '';
 }
