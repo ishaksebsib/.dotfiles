@@ -12,6 +12,8 @@
 
     nixvim.url = "github:nix-community/nixvim/nixos-26.05";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs = inputs: inputs.blueprint { inherit inputs; };

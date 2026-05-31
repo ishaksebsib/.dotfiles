@@ -15,6 +15,7 @@
     ./mimeApps.nix
     ./wofi.nix
     ./waybar.nix
+    ./llms.nix
   ];
 
   programs.home-manager.enable = true;
