@@ -7,7 +7,7 @@
     nautilus
     google-chrome
     vlc
-    mission-center
+    gnome-system-monitor
     postman
     proton-vpn
     networkmanagerapplet
