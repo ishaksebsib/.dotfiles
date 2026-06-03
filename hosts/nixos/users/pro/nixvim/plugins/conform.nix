@@ -1,5 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  extraPackages = with pkgs; [
+    # formatters
+    black
+    isort
+    oxlint
+    stylua
+  ];
+
   plugins.conform-nvim = {
     enable = true;
     settings = {
