@@ -15,5 +15,13 @@
     pulse.enable = true;
   };
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  # Intel VA-API video acceleration reduces CPU usage in Chrome/video playback.
+  hardware.graphics.extraPackages = with pkgs; [
+    intel-media-driver
+  ];
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    LIBVA_DRIVER_NAME = "iHD";
+  };
 }
