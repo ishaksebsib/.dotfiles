@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     cloc
+    wl-clipboard
     just
     less
     lazygit
