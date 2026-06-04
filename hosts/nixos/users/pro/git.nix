@@ -20,6 +20,16 @@
       format = "openpgp";
     };
 
+    delta = {
+      enable = true;
+      options = {
+        side-by-side = true;
+        line-numbers = true;
+        navigate = true;
+        dark = true;
+      };
+    };
+
     settings = {
       user = {
         name = "ishaksebsib";
@@ -29,20 +39,9 @@
       pull.rebase = true;
       push.default = "current";
       init.defaultBranch = "main";
-      interactive.diffFilter = "delta --color-only";
       merge.conflictStyle = "zdiff3";
 
-      core = {
-        editor = "nvim";
-        pager = "delta";
-      };
-
-      delta = {
-        side-by-side = true;
-        line-numbers = true;
-        navigate = true;
-        dark = true;
-      };
+      core.editor = "nvim";
     };
 
     ignores = [ ".jj" ];
