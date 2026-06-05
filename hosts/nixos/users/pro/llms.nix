@@ -13,5 +13,6 @@ in
     llm-pkgs.pi
     llm-pkgs.opencode
     llm-pkgs.codex
+    llm-pkgs.claude-code
   ];
 }
