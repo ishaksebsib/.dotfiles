@@ -17,6 +17,7 @@
     ./wofi.nix
     ./waybar.nix
     ./llms.nix
+    ./nix-index.nix
   ];
 
   programs.home-manager.enable = true;
