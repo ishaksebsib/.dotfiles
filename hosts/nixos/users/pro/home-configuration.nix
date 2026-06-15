@@ -5,6 +5,7 @@
     ./gh.nix
     ./apps.nix
     ./handy.nix
+    ./herdr.nix
     ./lumen.nix
     ./cli.nix
     ./gtk.nix
