@@ -19,6 +19,12 @@
 
     functions = {
       fish_greeting = "";
+
+      h = ''
+        command ghostty --config-default-files=false --config-file="$HOME/.config/ghostty/herdr" -e herdr &
+        disown
+        exit
+      '';
     };
   };
 
