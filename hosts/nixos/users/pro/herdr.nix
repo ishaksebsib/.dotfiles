@@ -5,15 +5,15 @@
   ];
 
   xdg.configFile."herdr/config.toml".text = ''
-		onboarding = false
+    		onboarding = false
 
-    [terminal]
-    default_shell = "${pkgs.fish}/bin/fish"
+        [terminal]
+        default_shell = "${pkgs.fish}/bin/fish"
 
-    [keys]
-    prefix = "super+a"
-    switch_tab = "ctrl+1..9"
-    switch_workspace = "prefix+1..9"
-    focus_agent = "super+ctrl+1..9"
+        [keys]
+        prefix = "super+a"
+        switch_tab = "ctrl+1..9"
+        switch_workspace = "prefix+1..9"
+        focus_agent = "super+ctrl+1..9"
   '';
 }
