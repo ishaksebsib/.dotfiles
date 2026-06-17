@@ -1,7 +1,10 @@
 { ... }:
 {
+	colorschemes.catppuccin = {
+		enable = true;
+	};
   colorschemes.gruvbox = {
-    enable = true;
+    enable = false;
     settings = {
       contrast = "hard";
       overrides = {
