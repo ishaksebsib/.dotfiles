@@ -4,12 +4,12 @@ let
   inherit (pkgs) lib stdenvNoCC;
 
   pname = "herdr";
-  version = "0.6.10";
+  version = "0.7.0";
 
   sources = {
     x86_64-linux = {
       url = "https://github.com/ogulcancelik/herdr/releases/download/v${version}/herdr-linux-x86_64";
-      hash = "sha256-eNKY1aHvB2tGB+jjyS2Y9d6fDLMNrzGqkQoabpq7T6E=";
+      hash = "sha256-rSpdSApOBGCandMKGewHhUV432tfDqkpkkaWO69ANjs=";
     };
 
     aarch64-linux = {
