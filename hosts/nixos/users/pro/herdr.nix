@@ -16,6 +16,7 @@
         switch_tab = "ctrl+1..9"
         switch_workspace = "prefix+1..9"
         focus_agent = "super+ctrl+1..9"
+        remove_worktree = "prefix+shift+backspace"
 
         [ui.toast]
         enabled = true
