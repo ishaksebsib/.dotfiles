@@ -20,6 +20,16 @@
     "application/xhtml+xml" = "google-chrome.desktop";
     "application/x-extension-xhtml" = "google-chrome.desktop";
     "application/x-extension-xht" = "google-chrome.desktop";
+    "video/mp4" = "vlc.desktop";
+    "video/mpeg" = "vlc.desktop";
+    "video/ogg" = "vlc.desktop";
+    "video/quicktime" = "vlc.desktop";
+    "video/webm" = "vlc.desktop";
+    "video/x-flv" = "vlc.desktop";
+    "video/x-matroska" = "vlc.desktop";
+    "video/x-m4v" = "vlc.desktop";
+    "video/x-msvideo" = "vlc.desktop";
+    "video/x-ms-wmv" = "vlc.desktop";
   };
   xdg.mimeApps.associations.added = {
     "application/pdf" = "org.pwmt.zathura.desktop";
