@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     telegram-desktop
     uget
+    shotcut
     obs-studio
     nautilus
     google-chrome
