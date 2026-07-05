@@ -12,6 +12,7 @@
     postman
     proton-vpn
     networkmanagerapplet
+    transmission_4-gtk
   ];
 
   programs.zathura = {
