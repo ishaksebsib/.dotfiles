@@ -7,7 +7,7 @@
       j = "just";
       lg = "lazygit";
       nv = "nvim";
-      rb = "sudo nixos-rebuild switch --flake $HOME/.dotfiles";
+      rb = "nixos-rebuild switch --sudo --flake $HOME/.dotfiles";
       ns = "nix develop --command fish";
     };
 
