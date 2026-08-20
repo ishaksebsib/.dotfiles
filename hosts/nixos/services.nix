@@ -5,7 +5,7 @@ in
 {
   services.auto-cpufreq.enable = true;
 
-	# enable storage integration for file managers
+  # enable storage integration for file managers
   services.udisks2.enable = true;
   services.gvfs.enable = true;
 
