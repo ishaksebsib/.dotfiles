@@ -4,6 +4,7 @@
 
   services.gpg-agent = {
     enable = true;
+    enableSshSupport = true;
     pinentry.package = pkgs.pinentry-curses;
     extraConfig = ''
       default-cache-ttl 86400
@@ -41,8 +42,27 @@
       init.defaultBranch = "main";
       merge.conflictStyle = "zdiff3";
 
-      core.editor = "nvim";
+      core = {
+        editor = "nvim";
+        sshCommand = "ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o AddKeysToAgent=yes";
+      };
     };
+
+    includes = [
+      {
+        condition = "gitdir:~/dev/work/nexrizen/";
+        contents = {
+          user = {
+            name = "Ishak Sebsib";
+            email = "ishak@nexrizen.com";
+            signingKey = "~/.ssh/id_ed25519_github_nexrizen.pub";
+          };
+
+          gpg.format = "ssh";
+          core.sshCommand = "ssh -i ~/.ssh/id_ed25519_github_nexrizen -o IdentitiesOnly=yes -o AddKeysToAgent=yes";
+        };
+      }
+    ];
 
     ignores = [ ".jj" ];
   };
