@@ -13,8 +13,8 @@
 
   nix.channel.enable = false;
 
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 14d";
-  };
+  # nix.gc = {
+  #   automatic = true;
+  #   options = "--delete-older-than 14d";
+  # };
 }
