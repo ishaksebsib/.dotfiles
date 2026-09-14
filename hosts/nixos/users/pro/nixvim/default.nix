@@ -21,6 +21,7 @@
     ./plugins/indent-blankline.nix
     ./plugins/colorizer.nix
     ./plugins/todo-comments.nix
+    ./plugins/render-markdown.nix
     ./plugins/extra.nix
     ./plugins/terminal.nix
   ];
