@@ -11,6 +11,7 @@
     gnome-system-monitor
     postman
     proton-vpn
+    rustdesk
     networkmanagerapplet
     transmission_4-gtk
     antigravity
