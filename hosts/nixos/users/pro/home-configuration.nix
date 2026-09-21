@@ -7,6 +7,7 @@
     ./handy.nix
     ./herdr.nix
     ./hunk.nix
+    ./rustdesk.nix
     ./lumen.nix
     ./cli.nix
     ./gtk.nix
