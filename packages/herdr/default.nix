@@ -4,7 +4,7 @@ let
   inherit (pkgs) lib stdenvNoCC;
 
   pname = "herdr";
-  version = "0.9.0";
+  version = "0.9.1";
 
   sources = {
     x86_64-linux = {
