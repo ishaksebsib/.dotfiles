@@ -3,6 +3,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Keep /boot from filling up with kernels from old generations.
+  boot.loader.systemd-boot.configurationLimit = 10;
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Compressed RAM swap: prevents hard freezes when RAM is exhausted.
