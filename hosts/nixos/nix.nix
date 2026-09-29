@@ -13,8 +13,18 @@
 
   nix.channel.enable = false;
 
-  # nix.gc = {
-  #   automatic = true;
-  #   options = "--delete-older-than 14d";
-  # };
+  # Weekly garbage collection: anything not reachable from a generation
+  # newer than 14 days gets removed from the store.
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+    randomizedDelaySec = "45min";
+  };
+
+  # Hardlink duplicate files in the store instead of keeping several copies.
+  nix.optimise = {
+    automatic = true;
+    dates = [ "weekly" ];
+  };
 }
