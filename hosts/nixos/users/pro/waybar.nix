@@ -10,7 +10,7 @@
       spacing = 2;
 
       modules-left = [
-        "custom/arch"
+        "custom/nixos"
         "hyprland/workspaces"
       ];
       modules-right = [
@@ -24,10 +24,10 @@
         "clock"
       ];
 
-      "custom/arch" = {
-        format = "󰣇";
+      "custom/nixos" = {
+        format = "";
         tooltip = true;
-        "tooltip-format" = "btw";
+        "tooltip-format" = "BTW";
       };
 
       "hyprland/workspaces" = {
@@ -239,14 +239,15 @@
         box-shadow: none;
     }
 
-    #custom-arch {
+    #custom-nixos {
+        font-family: "CaskaydiaMono Nerd Font";
         margin-left: 5px;
         padding: 0 10px;
         font-size: 18px;
         transition: color .5s;
     }
 
-    #custom-arch:hover {
+    #custom-nixos:hover {
         color: #458588;
     }
   '';
