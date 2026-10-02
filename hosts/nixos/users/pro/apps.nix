@@ -4,7 +4,6 @@
     telegram-desktop
     uget
     shotcut
-    obs-studio
     nautilus
     google-chrome
     vlc

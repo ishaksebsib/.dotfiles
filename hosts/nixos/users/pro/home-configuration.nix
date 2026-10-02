@@ -4,6 +4,7 @@
     ./git.nix
     ./gh.nix
     ./apps.nix
+    ./obs.nix
     ./handy.nix
     ./herdr.nix
     ./hunk.nix
