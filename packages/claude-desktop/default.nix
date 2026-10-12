@@ -61,51 +61,70 @@ let
     libxcb
     libxshmfence
   ];
+
+  unwrapped = pkgs.stdenv.mkDerivation {
+    inherit pname version;
+
+    src = pkgs.fetchurl source;
+
+    nativeBuildInputs = with pkgs; [
+      autoPatchelfHook
+      dpkg
+      makeWrapper
+    ];
+
+    buildInputs = runtimeLibs;
+
+    unpackPhase = ''
+      runHook preUnpack
+      # extract without the setuid bit on chrome-sandbox, which the nix sandbox rejects
+      dpkg-deb --fsys-tarfile "$src" | tar -x --no-same-owner --no-same-permissions
+      runHook postUnpack
+    '';
+
+    installPhase = ''
+      runHook preInstall
+
+      mkdir -p "$out/bin" "$out/lib"
+      cp -r usr/lib/claude-desktop "$out/lib/"
+      cp -r usr/share "$out/"
+
+      # setuid sandbox helper can't work from the nix store; chromium falls back to user namespaces
+      rm -f "$out/lib/claude-desktop/chrome-sandbox"
+
+      makeWrapper "$out/lib/claude-desktop/claude-desktop" "$out/bin/claude-desktop" \
+        --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath runtimeLibs}" \
+        --prefix PATH : "${lib.makeBinPath [ pkgs.xdg-utils ]}" \
+        --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-wayland-ime=true}}"
+
+      runHook postInstall
+    '';
+
+    meta = {
+      description = "Claude desktop app (Chat, Cowork and Claude Code)";
+      homepage = "https://code.claude.com/docs/en/desktop-linux";
+      license = lib.licenses.unfree;
+      platforms = builtins.attrNames sources;
+      sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+      mainProgram = "claude-desktop";
+    };
+  };
 in
-pkgs.stdenv.mkDerivation {
+# run inside an FHS env so binaries the app downloads at runtime (the Claude Code
+# engine in ~/.config/Claude/claude-code) find a standard /lib64 loader and glibc
+pkgs.buildFHSEnv {
   inherit pname version;
 
-  src = pkgs.fetchurl source;
+  targetPkgs = _: [ unwrapped ];
 
-  nativeBuildInputs = with pkgs; [
-    autoPatchelfHook
-    dpkg
-    makeWrapper
-  ];
+  runScript = "${unwrapped}/bin/claude-desktop";
 
-  buildInputs = runtimeLibs;
-
-  unpackPhase = ''
-    runHook preUnpack
-    # extract without the setuid bit on chrome-sandbox, which the nix sandbox rejects
-    dpkg-deb --fsys-tarfile "$src" | tar -x --no-same-owner --no-same-permissions
-    runHook postUnpack
+  extraInstallCommands = ''
+    mkdir -p "$out/share"
+    cp -r ${unwrapped}/share/applications ${unwrapped}/share/icons "$out/share/"
   '';
 
-  installPhase = ''
-    runHook preInstall
+  passthru = { inherit unwrapped; };
 
-    mkdir -p "$out/bin" "$out/lib"
-    cp -r usr/lib/claude-desktop "$out/lib/"
-    cp -r usr/share "$out/"
-
-    # setuid sandbox helper can't work from the nix store; chromium falls back to user namespaces
-    rm -f "$out/lib/claude-desktop/chrome-sandbox"
-
-    makeWrapper "$out/lib/claude-desktop/claude-desktop" "$out/bin/claude-desktop" \
-      --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath runtimeLibs}" \
-      --prefix PATH : "${lib.makeBinPath [ pkgs.xdg-utils ]}" \
-      --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-wayland-ime=true}}"
-
-    runHook postInstall
-  '';
-
-  meta = {
-    description = "Claude desktop app (Chat, Cowork and Claude Code)";
-    homepage = "https://code.claude.com/docs/en/desktop-linux";
-    license = lib.licenses.unfree;
-    platforms = builtins.attrNames sources;
-    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-    mainProgram = "claude-desktop";
-  };
+  inherit (unwrapped) meta;
 }
