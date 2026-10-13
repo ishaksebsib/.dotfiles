@@ -10,6 +10,7 @@
     ./hunk.nix
     ./rustdesk.nix
     ./claude-desktop.nix
+    ./paper.nix
     ./cli.nix
     ./gtk.nix
     ./neovim.nix
