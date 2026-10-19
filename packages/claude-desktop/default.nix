@@ -4,19 +4,19 @@ let
   inherit (pkgs) lib;
 
   pname = "claude-desktop";
-  version = "2.31226.1";
+  version = "2.42304.2";
 
   # prebuilt .deb from Anthropic's apt repo:
   # https://downloads.claude.ai/claude-desktop/apt/stable/dists/stable/main/binary-<arch>/Packages
   sources = {
     x86_64-linux = {
       url = "https://downloads.claude.ai/claude-desktop/apt/stable/pool/main/c/claude-desktop/claude-desktop_${version}_amd64.deb";
-      hash = "sha256-Wpvr38sd9s44dns3Pzp/q/dxVqLd2KP10Elh2lveMF4=";
+      hash = "sha256-OKfVi1ipdsiMplLqovesAsh8SjiK4w9GjXK3kOa1f5A=";
     };
 
     aarch64-linux = {
       url = "https://downloads.claude.ai/claude-desktop/apt/stable/pool/main/c/claude-desktop/claude-desktop_${version}_arm64.deb";
-      hash = "sha256-0vV6OP/HPP2mYPh3Kl+LraBebXQ5mUiiaMb11TWT7o8=";
+      hash = "sha256-APuFZMoVYIaxHTLwa7mld07xCE9GMtAV9kjcJbf+Prs=";
     };
   };
 
