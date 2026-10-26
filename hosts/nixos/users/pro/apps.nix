@@ -12,7 +12,6 @@
     proton-vpn
     networkmanagerapplet
     transmission_4-gtk
-    antigravity
   ];
 
   programs.zathura = {
