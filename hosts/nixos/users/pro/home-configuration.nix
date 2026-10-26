@@ -12,6 +12,7 @@
     ./claude-desktop.nix
     ./paper.nix
     ./t3code.nix
+    ./antigravity-hub.nix
     ./cli.nix
     ./gtk.nix
     ./neovim.nix
