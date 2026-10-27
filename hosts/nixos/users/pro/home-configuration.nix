@@ -10,7 +10,6 @@
     ./hunk.nix
     ./rustdesk.nix
     ./claude-desktop.nix
-    ./paper.nix
     ./t3code.nix
     ./antigravity-hub.nix
     ./cli.nix
