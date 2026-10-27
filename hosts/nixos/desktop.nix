@@ -14,6 +14,13 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    # Keep Bluetooth headphones on A2DP (music quality) when an app opens the mic,
+    # instead of switching to the choppy HFP headset profile.
+    wireplumber.extraConfig."51-bluetooth-no-autoswitch" = {
+      "wireplumber.settings" = {
+        "bluetooth.autoswitch-to-headset-profile" = false;
+      };
+    };
   };
 
   # Intel VA-API video acceleration reduces CPU usage in Chrome/video playback.

@@ -12,6 +12,12 @@ in
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # Realtek RTL8821C stalls (firmware drops packet completions) when USB
+  # autosuspend kicks in, causing Bluetooth audio dropouts until a reboot.
+  boot.extraModprobeConfig = ''
+    options btusb enable_autosuspend=0
+  '';
+
   services.interception-tools = {
     enable = true;
     plugins = [ pkgs.interception-tools-plugins.dual-function-keys ];
