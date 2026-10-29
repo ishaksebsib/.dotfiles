@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   programs.hyprland.enable = true;
-  programs.steam.enable = true;
 
   services.xserver.enable = true;
   services.displayManager.ly.enable = true;
