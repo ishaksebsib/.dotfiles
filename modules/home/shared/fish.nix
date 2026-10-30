@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
+let
+  inherit (pkgs.stdenv.hostPlatform) isDarwin isLinux;
+in
 {
   programs.fish = {
     enable = true;
@@ -7,7 +10,11 @@
       j = "just";
       lg = "lazygit";
       nv = "nvim";
-      rb = "nixos-rebuild switch --sudo --flake $HOME/.dotfiles";
+      rb =
+        if isDarwin then
+          "sudo darwin-rebuild switch --flake $HOME/.dotfiles"
+        else
+          "nixos-rebuild switch --sudo --flake $HOME/.dotfiles";
       ns = "nix develop --command fish";
     };
 
@@ -19,7 +26,9 @@
 
     functions = {
       fish_greeting = "";
-
+    }
+    // lib.optionalAttrs isLinux {
+      # herdr is packaged for Linux only
       h = ''
         command ghostty --config-default-files=false --config-file="$HOME/.config/ghostty/herdr" -e herdr &
         disown

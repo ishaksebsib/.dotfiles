@@ -1,8 +1,7 @@
-{ pkgs, inputs, ... }:
+{ flake, ... }:
 {
   imports = [
-    ./git.nix
-    ./gh.nix
+    flake.homeModules.shared
     ./apps.nix
     ./obs.nix
     ./handy.nix
@@ -12,18 +11,12 @@
     ./claude-desktop.nix
     ./t3code.nix
     ./antigravity-hub.nix
-    ./cli.nix
+    ./clipboard.nix
     ./gtk.nix
-    ./neovim.nix
     ./hyprland.nix
-    ./ghostty.nix
-    ./fish.nix
-    ./starship.nix
     ./mimeApps.nix
     ./wofi.nix
     ./waybar.nix
-    ./llms.nix
-    ./nix-index.nix
   ];
 
   programs.home-manager.enable = true;

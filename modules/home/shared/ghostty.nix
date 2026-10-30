@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   xdg.configFile = {
     "ghostty/base".text = ''
@@ -64,6 +64,8 @@
 
   programs.ghostty = {
     enable = true;
+    # the source-built ghostty package is Linux-only; use the upstream binary on macOS
+    package = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin pkgs.ghostty-bin;
 
     settings = {
       "config-file" = [
