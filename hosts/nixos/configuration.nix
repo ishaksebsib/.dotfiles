@@ -6,7 +6,6 @@
     ./locale.nix
     ./networking.nix
     ./nix.nix
-    ./nixpkgs.nix
     ./user.nix
     ./desktop.nix
     ./services.nix
