@@ -21,16 +21,6 @@
       format = "openpgp";
     };
 
-    delta = {
-      enable = true;
-      options = {
-        side-by-side = true;
-        line-numbers = true;
-        navigate = true;
-        dark = true;
-      };
-    };
-
     settings = {
       user = {
         name = "ishaksebsib";
@@ -65,5 +55,16 @@
     ];
 
     ignores = [ ".jj" ];
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      side-by-side = true;
+      line-numbers = true;
+      navigate = true;
+      dark = true;
+    };
   };
 }
