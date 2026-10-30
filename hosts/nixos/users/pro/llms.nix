@@ -1,12 +1,6 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, perSystem, ... }:
 let
-  system = pkgs.stdenv.hostPlatform.system;
-  llm-pkgs = inputs.llm-agents.packages.${system};
+  llm-pkgs = perSystem.llm-agents;
 
   claude-work = pkgs.writeShellScriptBin "claude-work" ''
     export CLAUDE_CONFIG_DIR="$HOME/.claude-work"

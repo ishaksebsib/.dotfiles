@@ -1,6 +1,6 @@
-{ inputs, pkgs, ... }:
+{ perSystem, ... }:
 {
   home.packages = [
-    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.t3code
+    perSystem.self.t3code
   ];
 }

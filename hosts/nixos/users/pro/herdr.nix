@@ -1,7 +1,7 @@
-{ inputs, pkgs, ... }:
+{ perSystem, pkgs, ... }:
 {
   home.packages = [
-    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.herdr
+    perSystem.self.herdr
     pkgs.bun
     pkgs.libnotify
   ];

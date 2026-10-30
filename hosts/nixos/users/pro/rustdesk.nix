@@ -1,6 +1,6 @@
-{ inputs, pkgs, ... }:
+{ perSystem, ... }:
 {
   home.packages = [
-    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.rustdesk
+    perSystem.self.rustdesk
   ];
 }
