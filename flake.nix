@@ -23,6 +23,11 @@
     inputs:
     inputs.blueprint {
       inherit inputs;
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
       nixpkgs.config.allowUnfree = true;
     };
 }
