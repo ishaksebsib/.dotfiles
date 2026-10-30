@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ hostName, ... }:
 {
-  networking.hostName = "nixos";
+  networking.hostName = hostName;
   networking.networkmanager.enable = true;
 
   services.tailscale = {
