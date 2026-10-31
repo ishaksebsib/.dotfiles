@@ -12,7 +12,14 @@
       window-padding-x = 0
       window-padding-y = 0
       window-padding-balance = true
-      window-decoration = none
+      ${
+        if pkgs.stdenv.hostPlatform.isDarwin then
+          # no visible titlebar, but the (hidden) close button stays, which
+          # OmniWM presses to close a window
+          "macos-titlebar-style = hidden"
+        else
+          "window-decoration = none"
+      }
       background-opacity = 1
 
       working-directory = home

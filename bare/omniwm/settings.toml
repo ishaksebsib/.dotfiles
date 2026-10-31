@@ -276,11 +276,11 @@ minHeight = 320.0
 minWidth = 660.0
 
 [[hotkeys]]
-binding = "Option+S"
+binding = "Unassigned"
 id = "toggleScratchpad.1"
 
 [[hotkeys]]
-binding = "Option+Shift+S"
+binding = "Unassigned"
 id = "assignFocusedWindowToScratchpad.1"
 
 [[hotkeys]]
