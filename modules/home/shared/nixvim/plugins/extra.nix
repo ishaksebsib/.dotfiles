@@ -6,7 +6,6 @@
     pkgs.vimPlugins.nerdcommenter
     (pkgs.vimPlugins."auto-save-nvim" or pkgs.vimPlugins.autoSaveNvim)
     (pkgs.vimPlugins."fff-nvim" or pkgs.vimPlugins.fffNvim)
-    (pkgs.vimPlugins."supermaven-nvim" or pkgs.vimPlugins.supermavenNvim)
   ];
 
   extraConfigLua = ''
@@ -34,17 +33,5 @@
         },
       })
     end, { desc = "Live fuzzy grep" })
-
-    -- supermaven-nvim (currently disabled)
-    require("supermaven-nvim").setup({
-      keymaps = {
-        accept_suggestion = "<Tab>",
-        accept_word = "<S-Tab>",
-        clear_suggestion = "<C-]>",
-      },
-      condition = function()
-        return false
-      end,
-    })
   '';
 }
