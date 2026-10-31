@@ -3,6 +3,7 @@
   imports = [
     flake.homeModules.shared
     ./omniwm.nix
+    ./wallpaper.nix
   ];
 
   programs.home-manager.enable = true;
