@@ -5,8 +5,6 @@
     ./apps.nix
     ./obs.nix
     ./handy.nix
-    ./herdr.nix
-    ./hunk.nix
     ./rustdesk.nix
     ./claude-desktop.nix
     ./t3code.nix

@@ -10,5 +10,8 @@
     ./starship.nix
     ./llms.nix
     ./nix-index.nix
+    ./apps.nix
+    ./herdr.nix
+    ./hunk.nix
   ];
 }

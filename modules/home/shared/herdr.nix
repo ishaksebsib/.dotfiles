@@ -1,10 +1,11 @@
-{ perSystem, pkgs, ... }:
+{ perSystem, pkgs, lib, ... }:
 {
   home.packages = [
     perSystem.self.herdr
     pkgs.bun
-    pkgs.libnotify
-  ];
+  ]
+  # notify-send for herdr toasts; macOS uses its own notification center
+  ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [ pkgs.libnotify ];
 
   xdg.configFile."herdr/config.toml".text = ''
     onboarding = false
