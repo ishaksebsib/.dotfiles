@@ -57,7 +57,8 @@ in
     RunAtLoad = true;
     KeepAlive = true;
     ProcessType = "Interactive";
-    StandardOutPath = "/var/log/kanata.log";
+    # errors only: stdout is kanata's info lines plus the driver library's
+    # "virtual_hid_keyboard_ready" every few seconds, so it stays at /dev/null
     StandardErrorPath = "/var/log/kanata.log";
     # unused by kanata: changes the plist when the package does, so the
     # daemon restarts onto the newly signed binary
