@@ -4,6 +4,7 @@
     flake.modules.common.nix
     flake.modules.common.fonts
     flake.modules.common.home-manager
+    flake.modules.common.tailscale
     ./hardware.nix
     ./boot.nix
     ./locale.nix

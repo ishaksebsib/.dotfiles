@@ -9,6 +9,7 @@
     ncdu
     p7zip
     unzip
+    wget
   ];
 
   programs.direnv = {

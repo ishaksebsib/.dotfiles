@@ -81,6 +81,13 @@
     "ghostty/herdr".text = ''
       config-file = base
       config-file = catppuccin
+
+      # pass herdr's keys through: on macOS Ghostty binds Cmd+A to select_all
+      # and Cmd+1..9 to its own tabs
+      keybind = super+a=unbind
+      ${lib.concatMapStringsSep "\n" (
+        n: "keybind = super+digit_${n}=unbind\nkeybind = super+${n}=unbind"
+      ) (map toString (lib.range 1 9))}
     '';
   };
 

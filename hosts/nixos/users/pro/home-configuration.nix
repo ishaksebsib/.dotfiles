@@ -4,11 +4,8 @@
     flake.homeModules.shared
     ./apps.nix
     ./obs.nix
-    ./handy.nix
     ./rustdesk.nix
     ./claude-desktop.nix
-    ./t3code.nix
-    ./antigravity-hub.nix
     ./clipboard.nix
     ./gtk.nix
     ./hyprland.nix

@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     hyprlock
     hyprpaper
-    hyprshot
     swaynotificationcenter
     playerctl
     brightnessctl

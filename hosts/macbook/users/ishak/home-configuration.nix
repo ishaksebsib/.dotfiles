@@ -4,7 +4,7 @@
     flake.homeModules.shared
     ./omniwm.nix
     ./wallpaper.nix
-    ./flameshot.nix
+    ./rex.nix
   ];
 
   programs.home-manager.enable = true;

@@ -12,5 +12,9 @@
     ./nix-index.nix
     ./apps.nix
     ./herdr.nix
+    ./flameshot.nix
+    ./handy.nix
+    ./t3code.nix
+    ./antigravity-hub.nix
   ];
 }
