@@ -6,5 +6,6 @@
     ];
     persistent-others = [ ];
     show-recents = false;
+    autohide = true;
   };
 }
