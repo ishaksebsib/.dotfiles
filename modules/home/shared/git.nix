@@ -5,7 +5,9 @@
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
-    pinentry.package = pkgs.pinentry-curses;
+    # curses pinentry needs a tty, so GUI apps signing commits on macOS would fail
+    pinentry.package =
+      if pkgs.stdenv.hostPlatform.isDarwin then pkgs.pinentry_mac else pkgs.pinentry-curses;
     extraConfig = ''
       default-cache-ttl 86400
       max-cache-ttl 86400
@@ -15,8 +17,8 @@
   programs.git = {
     enable = true;
 
+    # signing.key is per machine: each host's home-configuration.nix sets its own
     signing = {
-      key = "921099A4B90623CA";
       signByDefault = true;
       format = "openpgp";
     };

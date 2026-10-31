@@ -19,6 +19,8 @@
 
   programs.home-manager.enable = true;
 
+  programs.git.signing.key = "921099A4B90623CA";
+
   systemd.user.startServices = "sd-switch";
 
   home.stateVersion = "26.05";
