@@ -24,7 +24,7 @@ let
   src = pkgs.fetchurl source;
 
   # Used only to lift the desktop entry and icon out of the AppImage.
-  contents = appimageTools.extractType2 { inherit pname version src; };
+  contents = appimageTools.extract { inherit pname version src; };
 in
 appimageTools.wrapType2 {
   inherit pname version src;

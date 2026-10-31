@@ -14,7 +14,7 @@
     background = "dark";
   };
 
-  diagnostics = {
+  diagnostic.settings = {
     virtual_text = {
       source = "if_many";
       spacing = 4;
