@@ -1,6 +1,6 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 let
-  inherit (pkgs.stdenv.hostPlatform) isDarwin isLinux;
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
 in
 {
   programs.fish = {
@@ -26,14 +26,24 @@ in
 
     functions = {
       fish_greeting = "";
-    }
-    // lib.optionalAttrs isLinux {
-      # herdr is packaged for Linux only
-      h = ''
-        command ghostty --config-default-files=false --config-file="$HOME/.config/ghostty/herdr" -e herdr &
-        disown
-        exit
-      '';
+
+      # open herdr in its own Ghostty window, then close this shell
+      h =
+        let
+          args = ''--config-default-files=false --config-file="$HOME/.config/ghostty/herdr" -e herdr'';
+        in
+        if isDarwin then
+          # the ghostty CLI cannot open windows on macOS, so start a new app instance
+          ''
+            open -na Ghostty --args ${args}
+            exit
+          ''
+        else
+          ''
+            command ghostty ${args} &
+            disown
+            exit
+          '';
     };
   };
 
