@@ -1,6 +1,6 @@
 # Custom packages (`packages/<pname>/default.nix`)
 
-Use only for software missing from nixpkgs and flake inputs. GUI apps here are deliberately Linux-only (macOS gets them as Homebrew casks); CLI tools carry a source for every platform upstream publishes (see `herdr`).
+Use only for software missing from nixpkgs and flake inputs. GUI apps here are Linux-only for now (macOS is pure Nix with no Homebrew; ask the user before adding a darwin build); CLI tools carry a source for every platform upstream publishes (see `herdr`).
 
 ## Skeleton
 

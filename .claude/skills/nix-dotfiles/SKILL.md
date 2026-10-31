@@ -1,6 +1,6 @@
 ---
 name: nix-dotfiles
-description: Structure, placement rules and verification for this Nix dotfiles repo built on numtide/blueprint (NixOS now, nix-darwin macOS and standalone home-manager later). Use whenever adding, moving or changing anything in the repo — packages, apps, CLI tools, program configs, services, hosts, users, modules, flake inputs, custom packages in packages/ — or when deciding what is shared across operating systems versus Linux- or macOS-only, or when the user mentions blueprint, flake.nix, home-manager, nix-darwin, hosts/, modules/ or rebuilding.
+description: Structure, placement rules and verification for this Nix dotfiles repo built on numtide/blueprint (NixOS host `nixos`, nix-darwin host `macbook`, standalone home-manager later). Use whenever adding, moving or changing anything in the repo — packages, apps, CLI tools, program configs, services, hosts, users, modules, flake inputs, custom packages in packages/ — or when deciding what is shared across operating systems versus Linux- or macOS-only, or when the user mentions blueprint, flake.nix, home-manager, nix-darwin, hosts/, modules/ or rebuilding.
 ---
 
 # Nix dotfiles (blueprint)
@@ -25,8 +25,8 @@ Everything below those entry points is wired by hand: a new file does nothing un
 Three layers — move something up only when a second consumer needs it:
 
 1. **Portable user config** — `modules/home/shared/` (`flake.homeModules.shared`). Must evaluate on x86_64-linux, aarch64-linux and aarch64-darwin, integrated and standalone.
-2. **OS-specific user config** — `hosts/<h>/users/<u>/*.nix` (today: Linux desktop — Hyprland, waybar, gtk, mimeApps, clipboard, Linux GUI apps).
-3. **System config** — `hosts/<h>/*.nix` topic files (boot, networking, nix, services…). Settings shared by several hosts go to `modules/common/` (NixOS + darwin), `modules/nixos/` or `modules/darwin/`.
+2. **OS-specific user config** — `hosts/<h>/users/<u>/*.nix`: `hosts/nixos/users/pro/` (Linux desktop — Hyprland, waybar, gtk, mimeApps, clipboard, Linux GUI apps) and `hosts/macbook/users/ishak/` (macOS). The username differs per machine: `pro` on NixOS, `ishak` on the Mac.
+3. **System config** — `hosts/<h>/*.nix` topic files (boot, networking, nix, services…). Settings shared by several hosts go to `modules/common/` (NixOS + darwin; today `nix`, `fonts`, `home-manager`, imported as `flake.modules.common.<name>`), `modules/nixos/` or `modules/darwin/`.
 
 Host folder name = `hostName` = flake attribute = machine hostname. Renaming the folder renames the machine.
 
@@ -37,7 +37,7 @@ Host folder name = `hostName` = flake attribute = machine hostname. Renaming the
 - **Package from a flake input** → `perSystem.<input>.<pkg>` (see `llms.nix`).
 - **Program with config** → a `programs.<x>` file in `shared/` if the program runs on both OSes, otherwise in the OS user folder. Prefer `programs.*` options over raw `xdg.configFile`.
 - **Linux GUI app** → `hosts/nixos/users/pro/apps.nix`; into `shared/apps.nix` only if the nixpkgs package also supports darwin and the user wants it on the Mac.
-- **macOS GUI app** → nix-darwin `homebrew.casks` in `modules/darwin/homebrew.nix`. Do not package `.dmg` files, do not add darwin sources to the GUI packages in `packages/`, never use nix-ld.
+- **macOS GUI app** → the macOS setup is pure Nix: no Homebrew, no `homebrew.*` options. Use the nixpkgs package (in `shared/apps.nix` if it is wanted on both OSes, else `hosts/macbook/users/ishak/`). If nixpkgs has no darwin build, ask the user before packaging one in `packages/`. Never use nix-ld.
 - **Software not packaged anywhere** → `packages/<name>/default.nix`, consumed as `perSystem.self.<name>` from a one-purpose module. See [references/packages.md](references/packages.md).
 - **System service** → the matching topic file in `hosts/nixos/` (or a new topic file); shared across NixOS hosts → `modules/nixos/`. User daemons: `systemd.user.*` on Linux, `launchd.agents` on macOS.
 - **Setting that differs per OS** → branch in place when it is a small part of a portable module; move the whole module to the OS layer when most of it is OS-specific. Branch on `pkgs.stdenv.hostPlatform.isDarwin`/`isLinux`, never on `hostName`.
@@ -73,6 +73,8 @@ Flakes only see files git knows about — run `git add -N <new files>` before ev
 ```bash
 # NixOS system evaluates
 nix eval --raw .#nixosConfigurations.nixos.config.system.build.toplevel.drvPath
+# macOS system evaluates (on the Mac, `darwin-rebuild build --flake .#macbook` also builds it)
+nix eval --raw .#darwinConfigurations.macbook.config.system.build.toplevel.drvPath
 # Refactor proof: identical drvPath to HEAD means an identical system
 nix eval --raw "git+file://$PWD?rev=$(git rev-parse HEAD)#nixosConfigurations.nixos.config.system.build.toplevel.drvPath"
 # Shared home module on other platforms (no Mac needed; also simulates standalone)
@@ -82,8 +84,10 @@ nix flake check --no-build --all-systems
 ```
 
 - When a refactor changes the drvPath, explain it with `nix run nixpkgs#nix-diff -- <old.drv> <new.drv>` before calling it done.
-- Do not run `nix flake check` without `--no-build` (it downloads every packaged app), `nix flake update`, or `nixos-rebuild`/`darwin-rebuild switch` unless the user asks. `nixos-rebuild build` is fine.
-- Known harmless warnings: "Home Manager 26.11 vs Nixpkgs 26.05" (from the lock file; leave it unless asked to update inputs), `unknown flake output '__functor'/'modules'/'mkPackagesFor'` (blueprint extras), and `programs.man.generateCaches` on darwin.
+- Do not run `nix flake check` without `--no-build` (it downloads every packaged app), `nix flake update`, or `nixos-rebuild`/`darwin-rebuild switch` unless the user asks. `nixos-rebuild build` and `darwin-rebuild build` are fine.
+- **nixpkgs, nix-darwin, home-manager and nixvim must report the same release** (nix-darwin aborts on a mismatch, home-manager warns, nixvim drops renamed options). All four track unstable/master (nixvim `main`), so update them together: `nix flake update nixpkgs nix-darwin home-manager nixvim`, never one alone. Expect nixvim option renames after an update (e.g. `diagnostics` → `diagnostic.settings`, `autopairs` → `nvim-autopairs`).
+- Known harmless warnings: `unknown flake output '__functor'/'modules'/'mkPackagesFor'` (blueprint extras) and `Git tree is dirty`. Any other evaluation warning is new and worth fixing.
+- On the Mac, Apple's Command Line Tools are removed, so `/usr/bin/git`, `python3`, `clang` are stubs that fail and pop an install dialog. Put Nix first on PATH in tool shells: `/etc/profiles/per-user/ishak/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin`, and run Python via `nix shell nixpkgs#python3`.
 - Format only touched files: `nix shell nixpkgs#nixfmt -c nixfmt <files>`.
 
 ## Commits

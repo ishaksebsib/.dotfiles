@@ -9,21 +9,27 @@ Read when adding a host or user, or writing a module meant for both NixOS and ni
 - Declare `users.users.<u>` (`isNormalUser = true`, groups) — blueprint does not create OS users.
 - `system.stateVersion` is a string, set once.
 
-**macOS** — `hosts/<h>/darwin-configuration.nix`:
+**macOS** — `hosts/<h>/darwin-configuration.nix` (see `hosts/macbook/`):
 
 ```nix
 { flake, hostName, ... }:
 {
-  imports = [ flake.darwinModules.homebrew ];   # + flake.modules.common.* when they exist
+  imports = [
+    flake.modules.common.nix
+    flake.modules.common.fonts
+    flake.modules.common.home-manager
+    ./user.nix
+  ];
   nixpkgs.hostPlatform = "aarch64-darwin";      # blueprint derives perSystem from this
   networking.hostName = hostName;
-  system.primaryUser = "pro";                   # required by homebrew and system.defaults
-  users.users.pro.home = "/Users/pro";          # required: home-manager reads homeDirectory from it
-  system.stateVersion = 6;                      # integer on nix-darwin
+  system.stateVersion = 7;                      # integer on nix-darwin, set once
 }
 ```
 
-Apply with `sudo darwin-rebuild switch --flake .#<h>`. A fish login shell also needs `users.users.<u>.shell` plus `users.knownUsers`/`uid` (verify against nix-darwin docs).
+`user.nix` sets `system.primaryUser` (required by `system.defaults`), and `users.users.<u>` with `home`, `uid` matching the existing account, and `shell = pkgs.fish`; `users.knownUsers = [ "<u>" ]` is what lets nix-darwin change the login shell, and `programs.fish.enable = true` is asserted for it.
+
+First switch on a fresh Mac (before `darwin-rebuild` exists; nix-darwin may ask to rename `/etc/zshrc` etc. to `*.before-nix-darwin`):
+`sudo nix --extra-experimental-features 'nix-command flakes' run nix-darwin#darwin-rebuild -- switch --flake .#<h>`. Afterwards `sudo darwin-rebuild switch --flake .#<h>`.
 
 **Non-NixOS Linux** — a host folder with no OS file, only `hosts/<h>/users/<u>/home-configuration.nix` importing `flake.homeModules.shared`; add `targets.genericLinux.enable = true;`. Apply with `home-manager switch --flake .#<u>@<h>`.
 
