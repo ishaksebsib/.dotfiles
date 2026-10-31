@@ -54,6 +54,20 @@ functions = { ... } // lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux { h = 
 
 Use `lib.optionalAttrs` (not `mkIf`) when the *option itself* only exists on one OS — `mkIf` still errors on an undeclared option.
 
+## `~/dev` layout (same on every machine)
+
+```
+~/dev/
+  work/<org>/<repo>     employer/client code; ~/dev/work/nexrizen/ switches git identity + SSH key (shared/git.nix)
+  personal/<repo>       own projects
+  open-source/<repo>    own public projects
+  forks/<repo>          forks of upstream repos
+  experiments/<name>    throwaway spikes, clones to study, benchmarks
+```
+
+- Config that refers to these paths lives in `modules/home/shared/` and uses `~/dev/...` or `${config.home.homeDirectory}/dev/...` — never `/home/pro` or `/Users/ishak`, since the username and home prefix differ per OS.
+- A new top-level category or a path-keyed rule (git `includeIf`, direnv, shell helpers) must be added in the shared layer so every OS gets it.
+
 ## Rules
 
 1. **No `nixpkgs.config` or `nixpkgs.overlays` in host or home modules.** `allowUnfree` is set once on the blueprint call in `flake.nix`, which injects `nixpkgs.pkgs` into hosts; NixOS/nix-darwin assert against config on an external pkgs instance. Overlays, if ever needed, go in the blueprint `nixpkgs.overlays` argument so `packages/` sees them too.
