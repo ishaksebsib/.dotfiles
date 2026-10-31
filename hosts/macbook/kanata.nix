@@ -7,7 +7,7 @@
 # One-time manual steps per machine:
 #   - approve the driver: System Settings > General > Login Items & Extensions
 #     > Driver Extensions > Karabiner-DriverKit-VirtualHIDDevice
-#   - grant Input Monitoring and Accessibility to ${stableKanata}
+#   - grant Input Monitoring and Accessibility to /usr/local/libexec/nix-kanata/kanata
 { lib, pkgs, ... }:
 let
   # the driver version kanata is built against (bumps with kanata, e.g. 8.x for 1.13)
@@ -15,13 +15,11 @@ let
   managerApp = "/Applications/.Karabiner-VirtualHIDDevice-Manager.app";
   daemonExe = "${driver}/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon";
 
-  # macOS pins Input Monitoring/Accessibility (and background-item approval)
-  # to the code signature. Nix's ad-hoc signature is the binary's hash, which
-  # changes on every update, so kanata runs from a fixed path, re-signed with
-  # a self-signed key kept on this machine: the grants then survive updates.
   kanataExe = lib.getExe pkgs.kanata;
-  stableKanata = "/usr/local/libexec/nix-kanata/kanata";
-  signingDir = "/var/db/nix-kanata";
+  kanata = import ./stable-signed.nix { inherit lib pkgs; } {
+    name = "kanata";
+    exe = kanataExe;
+  };
 in
 {
   # preActivation: in place before nix-darwin reloads the launchd daemons
@@ -34,27 +32,7 @@ in
       "${managerApp}/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager" forceActivate
     fi
 
-    if [ ! -s ${signingDir}/key.pem ]; then
-      install -d -m 0700 ${signingDir}
-      # code signing rejects certificates without digitalSignature/codeSigning
-      ${lib.getExe pkgs.openssl} req -x509 -newkey rsa:2048 -nodes -days 36500 \
-        -subj "/CN=nix-kanata-codesign" \
-        -addext "keyUsage=critical,digitalSignature" \
-        -addext "extendedKeyUsage=critical,codeSigning" \
-        -keyout ${signingDir}/key.pem -out ${signingDir}/cert.pem 2>/dev/null
-      chmod 0600 ${signingDir}/key.pem
-    fi
-    if [ "$(cat ${signingDir}/signed-from 2>/dev/null)" != "${kanataExe}" ] || [ ! -x ${stableKanata} ]; then
-      echo "signing kanata into ${stableKanata}..."
-      mkdir -p "$(dirname ${stableKanata})"
-      install -m 0755 ${kanataExe} ${stableKanata}.new
-      out=$(${lib.getExe pkgs.rcodesign} sign --timestamp-url none \
-        --pem-file ${signingDir}/key.pem --pem-file ${signingDir}/cert.pem \
-        --binary-identifier org.nixos.kanata ${stableKanata}.new 2>&1) \
-        || { echo "$out" >&2; exit 1; }
-      mv -f ${stableKanata}.new ${stableKanata}
-      echo "${kanataExe}" > ${signingDir}/signed-from
-    fi
+    ${kanata.activation}
   '';
 
   # `command` wraps it in `wait4path /nix/store`, so it can't fail to spawn
@@ -70,7 +48,7 @@ in
 
   launchd.daemons.kanata.serviceConfig = {
     ProgramArguments = [
-      stableKanata
+      kanata.path
       "--cfg"
       "${../../bare/kanata/kanata.kbd}"
       # don't wait for Enter on errors; launchd restarts it

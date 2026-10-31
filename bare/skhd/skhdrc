@@ -1,0 +1,17 @@
+# App launch keys, like the exec binds in bare/hypr/hyprland.conf.
+# Option is the mod key (Space-hold, via Kanata). Window keys live in OmniWM
+# (bare/omniwm/settings.toml); Option+R opens Spotlight (hosts/macbook/keyboard.nix).
+
+# terminal: a new window in the running Ghostty, or start it
+alt - return : pgrep -xq ghostty && osascript -e 'tell application "Ghostty" to new window' || open -a Ghostty
+
+# browser: a new window
+alt - w : open -na "Google Chrome" --args --new-window
+
+alt - t : open -a Telegram
+
+# file manager: a Finder window at home
+alt - e : open ~
+
+# lock screen (hyprlock on NixOS): send macOS's own Lock Screen shortcut
+alt - g : /usr/local/libexec/nix-skhd/skhd -k "ctrl + cmd - q"

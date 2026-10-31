@@ -10,6 +10,7 @@
     ./chrome.nix
     ./keyboard.nix
     ./kanata.nix
+    ./skhd.nix
     ./windows.nix
   ];
 
