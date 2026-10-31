@@ -2,6 +2,7 @@
 {
   imports = [
     flake.homeModules.shared
+    ./omniwm.nix
   ];
 
   programs.home-manager.enable = true;
