@@ -2,9 +2,7 @@
 {
   home.packages = with pkgs; [
     telegram-desktop
-    shotcut
     google-chrome
-    postman
   ];
 
   programs.zathura = {

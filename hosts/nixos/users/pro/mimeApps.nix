@@ -9,7 +9,6 @@
     "x-scheme-handler/about" = "google-chrome.desktop";
     "x-scheme-handler/unknown" = "google-chrome.desktop";
     "application/pdf" = "org.pwmt.zathura.desktop";
-    "x-scheme-handler/postman" = "Postman.desktop";
     "application/epub+zip" = "org.pwmt.zathura.desktop";
     "text/plain" = "nvim.desktop";
     "x-terminal-emulator" = "ghostty.desktop";

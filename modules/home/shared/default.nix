@@ -12,6 +12,5 @@
     ./nix-index.nix
     ./apps.nix
     ./herdr.nix
-    ./hunk.nix
   ];
 }
