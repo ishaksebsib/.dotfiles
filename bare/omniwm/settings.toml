@@ -936,19 +936,19 @@ binding = "Unassigned"
 id = "swapSplit"
 
 [[hotkeys]]
-binding = "Control+Option+L"
+binding = "Option+Command+L"
 id = "resizeGrow.horizontal"
 
 [[hotkeys]]
-binding = "Control+Option+J"
+binding = "Option+Command+J"
 id = "resizeGrow.vertical"
 
 [[hotkeys]]
-binding = "Control+Option+H"
+binding = "Option+Command+H"
 id = "resizeShrink.horizontal"
 
 [[hotkeys]]
-binding = "Control+Option+K"
+binding = "Option+Command+K"
 id = "resizeShrink.vertical"
 
 [[hotkeys]]
