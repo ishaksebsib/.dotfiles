@@ -22,7 +22,7 @@
 
       keybind = ctrl+enter=unbind
 
-      font-size = 11
+      font-size = ${if pkgs.stdenv.hostPlatform.isDarwin then "14" else "11"}
       font-family = JetBrainsMono Nerd Font Mono
       font-family-bold = JetBrainsMono Nerd Font Mono
       font-family-italic = JetBrainsMono Nerd Font Mono
