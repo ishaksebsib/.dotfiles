@@ -9,6 +9,7 @@
     ./dock.nix
     ./chrome.nix
     ./keyboard.nix
+    ./windows.nix
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";

@@ -36,6 +36,7 @@ Host folder name = `hostName` = flake attribute = machine hostname. Renaming the
 - **Linux-only tool** → `hosts/nixos/users/pro/<topic>.nix`; if it is a small part of a portable module, guard it in place (`lib.optionals pkgs.stdenv.hostPlatform.isLinux`).
 - **Package from a flake input** → `perSystem.<input>.<pkg>` (see `llms.nix`).
 - **Program with config** → a `programs.<x>` file in `shared/` if the program runs on both OSes, otherwise in the OS user folder. Prefer `programs.*` options over raw `xdg.configFile`.
+- **Config file kept in the program's own format** (not Nix: TOML, conf, JSON…) → `bare/<program>/`, referenced from the Nix module by relative path (`../../../../bare/hypr`, `../../../../bare/omniwm/settings.toml`). Never next to the `.nix` files in `hosts/` or `modules/`.
 - **Linux GUI app** → `hosts/nixos/users/pro/apps.nix`; into `shared/apps.nix` only if the nixpkgs package also supports darwin and the user wants it on the Mac.
 - **macOS GUI app** → the macOS setup is pure Nix: no Homebrew, no `homebrew.*` options. Use the nixpkgs package (in `shared/apps.nix` if it is wanted on both OSes, else `hosts/macbook/users/ishak/`). If nixpkgs has no darwin build, ask the user before packaging one in `packages/`. Never use nix-ld.
 - **Software not packaged anywhere** → `packages/<name>/default.nix`, consumed as `perSystem.self.<name>` from a one-purpose module. See [references/packages.md](references/packages.md).
