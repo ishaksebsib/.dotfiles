@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   xdg.configFile = {
     "ghostty/base".text = ''
@@ -67,10 +72,12 @@
     # the source-built ghostty package is Linux-only; use the upstream binary on macOS
     package = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin pkgs.ghostty-bin;
 
+    # absolute paths: home-manager's `ghostty +validate-config` resolves relative
+    # ones against the /nix/store symlink target and fails the activation
     settings = {
       "config-file" = [
-        "base"
-        "gruvbox"
+        "${config.xdg.configHome}/ghostty/base"
+        "${config.xdg.configHome}/ghostty/gruvbox"
       ];
     };
   };
