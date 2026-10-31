@@ -37,7 +37,7 @@ stdenvNoCC.mkDerivation {
     homepage = "https://github.com/modem-dev/hunk";
     changelog = "https://github.com/modem-dev/hunk/releases/tag/v${version}";
     license = lib.licenses.mit;
-    platforms = lib.platforms.linux;
+    platforms = lib.platforms.linux ++ lib.platforms.darwin;
     sourceProvenance = [ lib.sourceTypes.binaryBytecode ];
     mainProgram = "hunk";
   };

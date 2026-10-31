@@ -16,6 +16,11 @@ let
       url = "https://github.com/ogulcancelik/herdr/releases/download/v${version}/herdr-linux-aarch64";
       hash = "sha256-9Mz03nRfLLmjmpg+m6NwPa1Q7CpY3qgwJs6rchu9jZ4=";
     };
+
+    aarch64-darwin = {
+      url = "https://github.com/ogulcancelik/herdr/releases/download/v${version}/herdr-macos-aarch64";
+      hash = "sha256-UXOj4K5C1dGrfr+l1eYyn3w9I/jho2d8fOMjHaKIQVc=";
+    };
   };
 
   system = pkgs.stdenv.hostPlatform.system;
