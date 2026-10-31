@@ -9,6 +9,7 @@
     ./dock.nix
     ./chrome.nix
     ./keyboard.nix
+    ./kanata.nix
     ./windows.nix
   ];
 

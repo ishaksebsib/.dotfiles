@@ -1,0 +1,30 @@
+;; Dual-function keys on macOS, like interception-tools dual-function-keys on
+;; NixOS (hosts/nixos/services.nix): tap for the key, hold for a modifier.
+;; Option is the OmniWM mod key, so Space-hold gives Option (SUPER on NixOS).
+;; Caps/Escape are swapped here too, instead of with hidutil.
+
+(defcfg
+  ;; tap-hold-release needs to see keys that are not in defsrc
+  process-unmapped-keys yes
+)
+
+(defsrc
+  esc caps spc
+)
+
+(defvar
+  ;; same as TAP_MILLISEC on NixOS
+  tap-time 200
+  hold-time 200
+)
+
+(defalias
+  ;; hold only wins once another key is pressed *and released* inside the hold,
+  ;; so fast typing that rolls over Space or Caps stays plain text
+  cap (tap-hold-release $tap-time $hold-time esc lctl)
+  spc (tap-hold-release $tap-time $hold-time spc lalt)
+)
+
+(deflayer base
+  caps @cap @spc
+)
