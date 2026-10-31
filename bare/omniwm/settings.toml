@@ -170,7 +170,7 @@ autoHideHideDelayMilliseconds = 0.0
 autoHideRevealDelayMilliseconds = 0.0
 backgroundOpacity = 0.1
 deduplicateAppIcons = false
-enabled = false
+enabled = true
 excludedBundleIDs = []
 height = 24.0
 hideEmptyWorkspaces = false
@@ -1016,7 +1016,7 @@ binding = "Unassigned"
 id = "removeWindowMark"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Shift+F"
 id = "toggleWorkspaceBarVisibility"
 
 [[hotkeys]]
