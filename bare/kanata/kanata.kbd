@@ -3,6 +3,13 @@
 ;; Option is the OmniWM mod key, so Space-hold gives Option (SUPER on NixOS).
 ;; Caps-hold gives Command, the Mac's app-shortcut key (Ctrl on NixOS).
 ;; Caps/Escape are swapped here too, instead of with hidutil.
+;;
+;; Top row: macOS can't hand kanata single keys, so kanata takes the whole
+;; keyboard and re-sends it through the Karabiner virtual keyboard. The MacBook
+;; top row sends plain F1-F12 and only Apple's internal-keyboard driver turns
+;; them into brightness/media, which the virtual keyboard doesn't get. So the
+;; row is mapped back to what's printed on it, with fn for real F-keys: the
+;; same as Karabiner-Elements' default "function keys" and kanata #975/#1141.
 
 (defcfg
   ;; tap-hold-release needs to see keys that are not in defsrc
@@ -10,7 +17,8 @@
 )
 
 (defsrc
-  esc caps spc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  caps spc  fn
 )
 
 (defvar
@@ -24,8 +32,16 @@
   ;; so fast typing that rolls over Space or Caps stays plain text
   cap (tap-hold-release $tap-time $hold-time esc lmet)
   spc (tap-hold-release $tap-time $hold-time spc lalt)
+  ;; fn still reaches macOS (Globe shortcuts) and switches the top row to F-keys
+  fn (multi fn (layer-while-held fkeys))
 )
 
 (deflayer base
-  caps @cap @spc
+  caps brdn brup mctl sls  dtn  dnd  prev pp   next mute vold volu
+  @cap @spc @fn
+)
+
+(deflayer fkeys
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  _    _    _
 )
