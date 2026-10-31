@@ -14,5 +14,8 @@
   # man (programs.man.package = null), so it only produces a warning
   programs.man.generateCaches = false;
 
+  # hides the "Last login" line /usr/bin/login prints in every new terminal
+  home.file.".hushlogin".text = "";
+
   home.stateVersion = "26.05";
 }

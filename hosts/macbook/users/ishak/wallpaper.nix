@@ -1,7 +1,7 @@
 # Same wallpaper as the NixOS desktop (hyprpaper).
 { lib, ... }:
 let
-  wallpaper = ../../../../assets/fingerprint.png;
+  wallpaper = ../../../../assets/dark.png;
 in
 {
   home.activation.wallpaper = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
