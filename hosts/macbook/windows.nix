@@ -1,6 +1,8 @@
 # Window look and behaviour to match Hyprland under OmniWM.
 {
   system.defaults = {
+    NSGlobalDomain.AppleInterfaceStyle = "Dark";
+
     # square window corners (rounding = 0); the same global keys OmniWM's
     # "System-wide Window Corners" writes. Apps apply it after a full relaunch.
     CustomUserPreferences.NSGlobalDomain = {
