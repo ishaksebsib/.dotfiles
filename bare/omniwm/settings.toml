@@ -428,6 +428,14 @@ binding = "Option+Shift+9"
 id = "moveToWorkspace.8"
 
 [[hotkeys]]
+binding = "Option+0"
+id = "switchWorkspace.9"
+
+[[hotkeys]]
+binding = "Option+Shift+0"
+id = "moveToWorkspace.9"
+
+[[hotkeys]]
 binding = "Unassigned"
 id = "switchWorkspaceSlot.1"
 
@@ -622,6 +630,10 @@ id = "moveColumnToWorkspace.7"
 [[hotkeys]]
 binding = "Unassigned"
 id = "moveColumnToWorkspace.8"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "moveColumnToWorkspace.9"
 
 [[hotkeys]]
 binding = "Option+Shift+H"
@@ -1107,6 +1119,14 @@ type = "main"
 id = "8D4D711C-2B2F-4FEC-86BF-FA952037738A"
 layoutType = "dwindle"
 name = "9"
+
+[workspaces.monitorAssignment]
+type = "main"
+
+[[workspaces]]
+id = "58E0843C-BF7A-4DC6-AC12-DCCCFCF9AD4E"
+layoutType = "dwindle"
+name = "10"
 
 [workspaces.monitorAssignment]
 type = "main"
