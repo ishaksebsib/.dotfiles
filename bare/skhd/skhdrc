@@ -16,6 +16,11 @@ alt - e : open ~
 # lock screen (hyprlock on NixOS): send macOS's own Lock Screen shortcut
 alt - g : /usr/local/libexec/nix-skhd/skhd -k "ctrl + cmd - q"
 
+# shut down / restart at once, like mod+Ctrl+O / mod+Shift+Ctrl+O on NixOS
+# (Caps-hold is Cmd here); apps still quit normally and can ask to save
+alt + cmd - o : osascript -e 'tell application "System Events" to shut down'
+shift + alt + cmd - o : osascript -e 'tell application "System Events" to restart'
+
 # screenshots to the clipboard, like Print / Shift+Print on NixOS:
 # Option+S copies the dragged region at once; Option+Shift+S opens the
 # Flameshot editor (draw, colors) and copies on Enter
