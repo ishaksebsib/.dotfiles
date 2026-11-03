@@ -12,6 +12,7 @@
     ./nix-index.nix
     ./apps.nix
     ./herdr.nix
+    ./herdr-app.nix
     ./flameshot.nix
     ./handy.nix
     ./t3code.nix
