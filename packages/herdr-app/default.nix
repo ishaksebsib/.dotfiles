@@ -4,23 +4,23 @@ let
   inherit (pkgs) lib stdenv;
 
   pname = "herdr-app";
-  version = "0.1.12";
+  version = "0.1.14";
 
   # where new versions are published: https://releases.herdr.dev/app/latest.json
   sources = {
     x86_64-linux = {
       url = "https://releases.herdr.dev/app/${version}/herdr-app-linux-x86_64.tar.gz";
-      hash = "sha256-omXmySXEh0WEBnQf+gnS+g09S9QBo07YwBwzYQjlfB8=";
+      hash = "sha256-R1o4P49DnjGRqGY1tcEobOTf0tn83x58vf3Wxxdvj/M=";
     };
 
     aarch64-linux = {
       url = "https://releases.herdr.dev/app/${version}/herdr-app-linux-aarch64.tar.gz";
-      hash = "sha256-dJ8x0w4/TX4k4nSPdNnLSpvdpMloAnq6/7b7I5/+tpQ=";
+      hash = "sha256-MKQxzpXBc1bv6K/tUMTq+IiNg+9FrNmqkRCU1RcH0Ac=";
     };
 
     aarch64-darwin = {
       url = "https://releases.herdr.dev/app/${version}/herdr-app-macos-aarch64.tar.gz";
-      hash = "sha256-AGpPaECaeVSNGqbF+Z2okRt9FJEO8qxr0aPc5jTKXQM=";
+      hash = "sha256-DabKIUIUOJyjngX99lI/1uS+QjpL59/Tm2d9aKQQ+os=";
     };
   };
 
