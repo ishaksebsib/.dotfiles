@@ -9,7 +9,7 @@ sudo nixos-rebuild switch --flake .#nixos
 nix-darwin (macOS):
 
 ```bash
-sudo darwin-rebuild switch --flake .#<hostname>
+sudo darwin-rebuild switch --flake .#macbook
 ```
 
 ## Screenshots
