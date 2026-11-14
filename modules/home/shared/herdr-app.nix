@@ -30,8 +30,9 @@ let
     # workspace picker and session navigator: the app's go-to-a-tab picker
     "w" = "mod.open:picker";
     "g" = "mod.open:picker";
-    # detach: the window closes, its terminals keep running in herdr-core
-    "q" = "window.close";
+    # detach: the app goes away, its terminals keep running in herdr-core
+    # (closing the last window on macOS leaves the app running)
+    "q" = if isDarwin then "app.quit" else "window.close";
     "o" = "agent.next";
     "c" = "tab.new";
     "shift-t" = "tab.rename";
