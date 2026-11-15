@@ -1012,7 +1012,7 @@ binding = "Option+V"
 id = "toggleFocusedWindowFloating"
 
 [[hotkeys]]
-binding = "Option+Q"
+binding = "Unassigned"
 id = "closeFocusedWindow"
 
 [[hotkeys]]

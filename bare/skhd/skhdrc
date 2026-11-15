@@ -13,6 +13,10 @@ alt - t : open -a Telegram
 # file manager: a Finder window at home
 alt - e : open ~
 
+# quit the focused app with all its windows (Cmd+Q); on macOS closing the
+# last window, as OmniWM's close does, leaves the app running
+alt - q : /usr/local/libexec/nix-skhd/skhd -k "cmd - q"
+
 # lock screen (hyprlock on NixOS): send macOS's own Lock Screen shortcut
 alt - g : /usr/local/libexec/nix-skhd/skhd -k "ctrl + cmd - q"
 
