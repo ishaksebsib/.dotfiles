@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, perSystem, ... }:
 let
   isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
 in
@@ -7,6 +7,7 @@ in
     telegram-desktop
     google-chrome
     obsidian
+    perSystem.self.ab-download-manager
     # the Mac builds ship real .app bundles
     (if isDarwin then vlc-bin else vlc)
     (if isDarwin then transmission_4-mac else transmission_4-gtk)
