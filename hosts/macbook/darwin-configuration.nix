@@ -15,6 +15,7 @@
     ./applications.nix
     ./windows.nix
     ./cloudflare-warp.nix
+    ./startup.nix
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
