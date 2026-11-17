@@ -1,8 +1,8 @@
--- Rex keybindings, matching herdr: Cmd+A is the prefix (Caps-hold is Cmd on
--- the Mac), then the herdr key. Tabs keep Rex's own Cmd+1..9.
+-- Rex keybindings, matching herdr: Option+A is the prefix (Space-hold is
+-- Option on the Mac), then the herdr key. Tabs keep Rex's own Cmd+1..9.
 -- Rex reads this file on start; `rex config reload` applies edits.
 
-local prefix = "cmd+a"
+local prefix = "alt+a"
 
 -- herdr's prefix+1..9 picks a workspace; Rex's session.select wants an id,
 -- so pick the Nth session in the order `rex ls` lists them
@@ -65,5 +65,5 @@ for key, bind in pairs(keys) do
   rex.bind(prefix .. ">" .. key, bind[1], bind[2])
 end
 
--- the prefix twice sends Cmd+A on to the terminal
+-- the prefix twice sends Option+A on to the terminal
 rex.bind(prefix .. ">" .. prefix, "pane.send_key", { key = prefix })

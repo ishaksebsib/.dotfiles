@@ -18,7 +18,8 @@ let
   # sequences after the same prefix. Tabs on Caps+1..9 are already the shipped
   # default on both OSes. Not in the app: worktrees, focus agent by number,
   # rename pane, scrollback editing, copy and resize modes, pane cycling.
-  prefix = if isDarwin then "cmd-a" else "super-a";
+  # Space-hold + A, like herdr.nix
+  prefix = if isDarwin then "alt-a" else "super-a";
   herdrKeys = {
     # Linux reports Shift+/ as ?, so both spellings
     "?" = "app.help";

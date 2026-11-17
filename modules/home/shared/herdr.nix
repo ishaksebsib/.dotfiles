@@ -19,7 +19,8 @@
         default_shell = "${pkgs.fish}/bin/fish"
 
         [keys]
-        prefix = "super+a"
+        # Space-hold + A: Space-hold is Super on NixOS, Option on macOS via kanata
+        prefix = "${if pkgs.stdenv.hostPlatform.isDarwin then "alt" else "super"}+a"
         # Caps-hold: Ctrl on NixOS, Cmd (super) on macOS via kanata
         switch_tab = "${if pkgs.stdenv.hostPlatform.isDarwin then "super" else "ctrl"}+1..9"
         switch_workspace = "prefix+1..9"
