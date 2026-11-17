@@ -10,7 +10,14 @@ in
   home.packages = [ perSystem.self.rex ];
 
   # updates come from bumping packages/rex, not Sparkle
-  targets.darwin.defaults."com.superlogical.rex".SUEnableAutomaticChecks = false;
+  # Rex keeps its terminal settings in the app's preferences (Settings >
+  # Terminal), not in init.lua; these match Ghostty (modules/home/shared/ghostty.nix)
+  targets.darwin.defaults."com.superlogical.rex" = {
+    SUEnableAutomaticChecks = false;
+    "Workspace.terminalFontName" = "JetBrainsMono Nerd Font Mono";
+    "Workspace.terminalFontStyle" = "Bold";
+    "Workspace.terminalFontPointSize" = 16.0;
+  };
 
   # herdr's keybindings, the Rex way
   xdg.configFile."rex/init.lua".source = ../../../../bare/rex/init.lua;
