@@ -49,7 +49,8 @@ local keys = {
   ["shift+l"] = { "pane.move.right" },
   ["v"] = { "pane.split.right" },
   ["-"] = { "pane.split.down" },
-  ["x"] = { "pane.close" },
+  -- the pane, or its tab when it's the last pane, like herdr
+  ["x"] = { "client.close" },
   ["z"] = { "pane.zoom" },
 
   -- layout
