@@ -24,6 +24,9 @@ stdenvNoCC.mkDerivation {
     runHook preInstall
     mkdir -p $out/Applications
     cp -R */"Rex Beta.app" $out/Applications
+    # the rex CLI ships inside the app
+    mkdir -p $out/bin
+    ln -s "$out/Applications/Rex Beta.app/Contents/Helpers/Rex Server.rex/Contents/MacOS/rex" $out/bin/rex
     runHook postInstall
   '';
 
@@ -32,5 +35,6 @@ stdenvNoCC.mkDerivation {
     license = lib.licenses.unfree;
     platforms = [ "aarch64-darwin" ];
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+    mainProgram = "rex";
   };
 }
