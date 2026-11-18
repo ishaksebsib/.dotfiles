@@ -11,8 +11,6 @@
     ./llms.nix
     ./nix-index.nix
     ./apps.nix
-    ./herdr.nix
-    ./herdr-app.nix
     ./torrential.nix
     ./flameshot.nix
     ./handy.nix

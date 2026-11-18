@@ -1,11 +1,11 @@
--- Rex keybindings, matching herdr: Option+A is the prefix (Space-hold is
--- Option on the Mac), then the herdr key. Tabs keep Rex's own Cmd+1..9.
+-- Rex keybindings: Option+A is the prefix (Space-hold is Option on the Mac
+-- via kanata), then a tmux-style key. Tabs keep Rex's own Cmd+1..9.
 -- Rex reads this file on start; `rex config reload` applies edits.
 
 local prefix = "alt+a"
 
--- herdr's prefix+1..9 picks a workspace; Rex's session.select wants an id,
--- so pick the Nth session in the order `rex ls` lists them
+-- prefix+1..9 picks a session; Rex's session.select wants an id, so pick
+-- the Nth session in the order `rex ls` lists them
 rex.action({
   name = "session_goto",
   title = "Go to Session N",
@@ -49,7 +49,7 @@ local keys = {
   ["shift+l"] = { "pane.move.right" },
   ["v"] = { "pane.split.right" },
   ["-"] = { "pane.split.down" },
-  -- the pane, or its tab when it's the last pane, like herdr
+  -- the pane, or its tab when it's the last pane
   ["x"] = { "client.close" },
   ["z"] = { "pane.zoom" },
 

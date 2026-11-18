@@ -19,7 +19,7 @@ in
     "Workspace.terminalFontPointSize" = 16.0;
   };
 
-  # herdr's keybindings, the Rex way
+  # keybindings: Option+A prefix, then a tmux-style key
   xdg.configFile."rex/init.lua".source = ../../../../bare/rex/init.lua;
 
   # Rex doesn't watch its config; reload a running server, never start one

@@ -26,24 +26,6 @@ in
 
     functions = {
       fish_greeting = "";
-
-      # open herdr in its own Ghostty window, then close this shell
-      h =
-        let
-          args = ''--config-default-files=false --config-file="$HOME/.config/ghostty/herdr" -e herdr'';
-        in
-        if isDarwin then
-          # the ghostty CLI cannot open windows on macOS, so start a new app instance
-          ''
-            open -na Ghostty --args ${args}
-            exit
-          ''
-        else
-          ''
-            command ghostty ${args} &
-            disown
-            exit
-          '';
     };
   };
 

@@ -77,18 +77,6 @@
       # Macchiato surface1
       split-divider-color = #494d64
     '';
-
-    "ghostty/herdr".text = ''
-      config-file = base
-      config-file = catppuccin
-
-      # pass herdr's keys through: on macOS Ghostty binds Cmd+1..9 to its own
-      # tabs, and left Option (Space-hold, herdr's prefix) must send Alt, not å
-      ${lib.optionalString pkgs.stdenv.hostPlatform.isDarwin "macos-option-as-alt = left"}
-      ${lib.concatMapStringsSep "\n" (
-        n: "keybind = super+digit_${n}=unbind\nkeybind = super+${n}=unbind"
-      ) (map toString (lib.range 1 9))}
-    '';
   };
 
   programs.ghostty = {
